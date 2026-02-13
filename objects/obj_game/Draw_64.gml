@@ -1,3 +1,5 @@
+/// @description Display info
+
 draw_text(20, 20, "has_possesion: " + string(obj_player.has_possesion))
 draw_text(20, 40, "walkspeed: " + string(obj_player.walkspeed))
 draw_text(20, 60, "can_possess: " + string(obj_player.can_possess))

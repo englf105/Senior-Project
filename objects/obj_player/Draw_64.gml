@@ -1,3 +1,6 @@
+/// @description Player GUI
+
+// Arrow and power bar
 if global.current_player == id {
 	draw_sprite(spr_arrow, 0, x, y - 64)
 	

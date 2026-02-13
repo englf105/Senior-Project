@@ -1,6 +1,8 @@
+/// @description Ball movement & Possesion
+
 var _player = global.current_player
 
-if place_meeting(x,y, obj_player) {
+if place_meeting(x,y, obj_player) and !global.ball_possesion {
 	global.current_player = instance_nearest(x,y, obj_player)
 }
 
@@ -13,8 +15,6 @@ if speed > 0 {
 }
 
 if _player.has_possesion {
-	
 	x = _player.x + (16 * _player.x_moving)
 	y = _player.y + 16 
-
 }
