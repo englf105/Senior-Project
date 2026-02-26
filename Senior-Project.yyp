@@ -45,6 +45,7 @@
     {"id":{"name":"spr_field","path":"sprites/spr_field/spr_field.yy",},},
     {"id":{"name":"spr_goal","path":"sprites/spr_goal/spr_goal.yy",},},
     {"id":{"name":"spr_player_arrow","path":"sprites/spr_player_arrow/spr_player_arrow.yy",},},
+    {"id":{"name":"spr_player_crosshair","path":"sprites/spr_player_crosshair/spr_player_crosshair.yy",},},
     {"id":{"name":"spr_player_idle","path":"sprites/spr_player_idle/spr_player_idle.yy",},},
     {"id":{"name":"spr_player_running","path":"sprites/spr_player_running/spr_player_running.yy",},},
     {"id":{"name":"spr_scoreboard","path":"sprites/spr_scoreboard/spr_scoreboard.yy",},},
