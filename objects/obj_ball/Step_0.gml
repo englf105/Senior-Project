@@ -14,7 +14,6 @@ if can_possess {
 		}
 		can_possess = false
 		in_possession = true
-		alarm[0] = room_speed
 	}
 }
 

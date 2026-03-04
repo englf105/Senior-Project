@@ -1,2 +1,2 @@
-// set the ball so it can be possessed
+// Let the ball be able to be possessed
 can_possess = true
