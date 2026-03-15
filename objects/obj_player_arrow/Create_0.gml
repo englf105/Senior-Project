@@ -1,0 +1,1 @@
+camera_player = obj_player

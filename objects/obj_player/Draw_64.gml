@@ -6,3 +6,8 @@ if global.current_player == id {
 		draw_rectangle(_barx - 32, _bary + 64, _barx + 32, _bary + 56, true)
 	}
 }
+
+draw_text(10, 10, hspeed)
+draw_text(10, 30, direction)
+draw_text(10, 50, image_xscale)
+draw_text(10, 70, image_yscale)

@@ -38,6 +38,7 @@
   "resources":[
     {"id":{"name":"obj_ball","path":"objects/obj_ball/obj_ball.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
+    {"id":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},},
     {"id":{"name":"obj_game","path":"objects/obj_game/obj_game.yy",},},
     {"id":{"name":"obj_goal","path":"objects/obj_goal/obj_goal.yy",},},
     {"id":{"name":"obj_player_arrow","path":"objects/obj_player_arrow/obj_player_arrow.yy",},},

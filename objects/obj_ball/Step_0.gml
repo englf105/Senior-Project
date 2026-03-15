@@ -20,8 +20,14 @@ if can_possess {
 // If the ball is currently in possession by a player
 if in_possession {
 	// Ball placement when in possession
-	x = global.current_player.x + (4 * global.current_player.image_xscale) + (2 * global.current_player.hspeed)
-	y = global.current_player.y + 12
+	if global.current_player.can_move {
+		x = global.current_player.x + (4 * global.current_player.image_xscale) + (2 * global.current_player.hspeed)
+		y = global.current_player.y + 12
+	}
+	else {
+		x = global.current_player.x
+		y = global.current_player.y
+	}
 	
 	// Ball animations 
 	if global.current_player.hspeed != 0 or global.current_player.vspeed > 0 {image_speed = 1}

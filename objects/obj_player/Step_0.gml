@@ -21,8 +21,9 @@ if global.current_player == id {
 		else {sprite_index = spr_player_idle}
 
 		// Direction the player is facing
-		if _right {image_xscale = 1}
-		if _left {image_xscale = -1}
+		if hspeed > 0 {image_xscale = 1}
+		if hspeed < 0 {image_xscale = -1}
+		
 	
 		// Kicking
 		if _click {
@@ -58,24 +59,29 @@ if global.current_player == id {
 		}
 	
 		// Moving while kicking
-		if mouse_check_button(1) {walkspeed = 1}
+		if mouse_check_button(1) {
+			walkspeed = 1
+
+		}
 		else {walkspeed = 2}
 		
 		// Tackling
 		if _tackle and not obj_ball.in_possession {
 			direction = point_direction(x, y, mouse_x, mouse_y)
-			if direction < 90 or direction > 270 {image_xscale = 1}
-			else {image_xscale = -1}
+			image_angle = direction
 			speed = 8
+			if hspeed > 0 {image_yscale = 1}
+			if hspeed < 0 {image_yscale = -1}
+			if image_xscale == -1 {image_xscale = 1}
 			sprite_index = spr_player_tackle
 			can_move = false
 		}
 	}
 	
+	// Tackling
 	if can_move == false {
-		if speed > 0 {
-			speed -= 0.5
-		}
+		// Tackling
+		if speed > 0 {speed -= 0.5}
 		if speed == 0 {
 			if alarm[2] < 0 {
 				alarm[2] = 15
