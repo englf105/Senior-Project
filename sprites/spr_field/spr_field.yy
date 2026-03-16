@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"6d31bc2e-9bf6-4ffc-aa58-77fb2f01856f","name":"6d31bc2e-9bf6-4ffc-aa58-77fb2f01856f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"d629353e-cffb-4c36-8037-37b6dfdaf345","name":"d629353e-cffb-4c36-8037-37b6dfdaf345","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":720,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"c370bba1-b78d-46f7-b9ba-81b647c66229","blendMode":0,"displayName":"default","isLocked":false,"name":"c370bba1-b78d-46f7-b9ba-81b647c66229","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"806da7fe-ed36-43d0-b48d-5a77b63f05d5","blendMode":0,"displayName":"default","isLocked":false,"name":"806da7fe-ed36-43d0-b48d-5a77b63f05d5","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_field",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6d31bc2e-9bf6-4ffc-aa58-77fb2f01856f","path":"sprites/spr_field/spr_field.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"3f73ad36-51af-4026-81ac-a4ed8509361e","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d629353e-cffb-4c36-8037-37b6dfdaf345","path":"sprites/spr_field/spr_field.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"cdbedbec-ce70-469f-8038-d84261bda9ec","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
