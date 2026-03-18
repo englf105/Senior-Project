@@ -80,8 +80,10 @@ if global.current_player == id {
 	if can_move == false {
 		if speed > 0 {speed -= 0.5;}
 		if speed == 0 {
-			if alarm[2] < 0 {
-				alarm[2] = 15;
+			if can_tackle == false {
+				if alarm[2] < 0 {
+					alarm[2] = 15;
+				}
 			}
 		}
 	}
@@ -140,4 +142,9 @@ if global.current_player != id {
 	
 	if hspeed > 0 {image_xscale = 1;}
 	if hspeed < 0 {image_xscale = -1;}
+	
+	if global.ball_scored == true {
+		can_move = false
+	}
+	
 }

@@ -1,3 +1,6 @@
+// Bounce off walls
+move_bounce_solid(true);
+
 // When the ball is moving
 if speed > 0 {
 	speed -= 0.75;
@@ -25,8 +28,11 @@ if in_possession {
 		y = global.current_player.y + 12
 	}
 	else {
-		x = global.current_player.x
-		y = global.current_player.y
+		// If the ball is in possession but the player cannot move
+		if global.current_player.speed != 0 {
+			x = global.current_player.x
+			y = global.current_player.y
+		}
 	}
 	
 	// Ball animations 
