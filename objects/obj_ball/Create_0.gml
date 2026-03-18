@@ -1,4 +1,5 @@
 // Ball rules
+depth = 2
 can_possess = true
 in_possession = false
 

@@ -87,6 +87,11 @@ if global.current_player == id {
 			}
 		}
 	}
+	
+	if global.ball_scored == true {
+		can_move = false
+		sprite_index = spr_player_idle
+	}
 }
 
 
@@ -142,9 +147,5 @@ if global.current_player != id {
 	
 	if hspeed > 0 {image_xscale = 1;}
 	if hspeed < 0 {image_xscale = -1;}
-	
-	if global.ball_scored == true {
-		can_move = false
-	}
 	
 }

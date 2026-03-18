@@ -45,3 +45,7 @@ if in_possession {
 	
 }
 else {image_speed = 0}
+
+if global.ball_scored == true {
+	can_possess = false
+}
