@@ -36,6 +36,7 @@
   },
   "name":"Senior-Project",
   "resources":[
+    {"id":{"name":"obj_ball_arrow","path":"objects/obj_ball_arrow/obj_ball_arrow.yy",},},
     {"id":{"name":"obj_ball","path":"objects/obj_ball/obj_ball.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
     {"id":{"name":"obj_game","path":"objects/obj_game/obj_game.yy",},},

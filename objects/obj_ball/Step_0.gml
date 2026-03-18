@@ -4,11 +4,16 @@ if ((y <= 0) || (y >= room_height)) {vspeed = -vspeed;} // Vertical collision
 
 // When the ball is moving
 if speed > 0 {
-	speed -= 0.75;
-	if speed <= 0 {
-		speed = 0;
-	}
+	speed -= 0.25;
+	if speed <= 0 {speed = 0;}
 }
+
+// Ball animations 
+if speed > 0 {image_speed = speed}
+else {image_speed = 0}
+image_xscale = sign(hspeed)
+if speed = 0 {image_xscale = 1}
+	
 
 // If the ball is currently able to be possessed
 if can_possess {
@@ -23,6 +28,7 @@ if can_possess {
 
 // If the ball is currently in possession by a player
 if in_possession {
+	
 	// Ball placement when in possession
 	if global.current_player.can_move {
 		x = global.current_player.x + (4 * global.current_player.image_xscale) + (2 * global.current_player.hspeed)
@@ -31,21 +37,16 @@ if in_possession {
 	else {
 		// If the ball is in possession but the player cannot move
 		if global.current_player.speed != 0 {
-			x = global.current_player.x
-			y = global.current_player.y
+			speed = global.current_player.speed
 		}
 	}
 	
 	// Ball animations 
-	if global.current_player.hspeed != 0 or global.current_player.vspeed > 0 {image_speed = 1}
-	else if global.current_player.vspeed < 0 {image_speed = -1}
+	if global.current_player.speed > 0 {image_speed = global.current_player.speed/2}
 	else {image_speed = 0}
-	
-	// Direction the ball is facing
-	image_xscale = global.current_player.image_xscale
-	
+	image_xscale = sign(global.current_player.hspeed)
+	if global.current_player.speed = 0 {image_xscale = 1}
 }
-else {image_speed = 0}
 
 if global.ball_scored == true {
 	can_possess = false

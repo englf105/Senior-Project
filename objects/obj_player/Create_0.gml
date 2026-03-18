@@ -10,8 +10,9 @@ can_tackle = true
 team = ""
 positions = ["ST", "RW", "LW", "CM", "CAM", "CDM", "CB", "FB", "GK"]
 walkspeed = 2
-kick_power = 4
-kick_power_max = 16
+kick_power = 2
+kick_power_original = kick_power
+kick_power_max = 12
 
 // Position
  
