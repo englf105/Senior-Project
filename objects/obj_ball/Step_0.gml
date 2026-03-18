@@ -45,7 +45,7 @@ if in_possession {
 	if global.current_player.speed > 0 {image_speed = global.current_player.speed/2}
 	else {image_speed = 0}
 	image_xscale = sign(global.current_player.hspeed)
-	if global.current_player.speed = 0 {image_xscale = 1}
+	if global.current_player.speed = 0 or global.current_player.vspeed != 0 {image_xscale = 1}
 }
 
 if global.ball_scored == true {
