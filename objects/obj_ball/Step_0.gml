@@ -1,5 +1,6 @@
 // Bounce off walls
-move_bounce_solid(true);
+if ((x <= 0) || (x >= room_width)){hspeed = -hspeed;} // Horizontal collision
+if ((y <= 0) || (y >= room_height)) {vspeed = -vspeed;} // Vertical collision
 
 // When the ball is moving
 if speed > 0 {
