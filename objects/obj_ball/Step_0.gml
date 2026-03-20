@@ -39,6 +39,8 @@ if in_possession {
 		if global.current_player.speed != 0 {
 			speed = global.current_player.speed
 		}
+		x = global.current_player.x
+		y = global.current_player.y
 	}
 	
 	// Ball animations 
