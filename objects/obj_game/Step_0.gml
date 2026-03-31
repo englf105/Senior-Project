@@ -7,5 +7,12 @@ if room = rm_field {
 		minute += 1;
 		second = 0;
 	}
+	if second == -1 {
+		minute -= 1;
+		second = 59;
+	}
+	if minute == 0 and second == 0 {
+		game_stop = true;
+	}
 
 }

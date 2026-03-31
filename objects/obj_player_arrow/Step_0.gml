@@ -1,6 +1,7 @@
 // Drawing arrow above current player
-if global.current_player == obj_player
-	camera_player = global.player
-	
-x = camera_player.x
-y = camera_player.y - 24
+
+target = global.current_player
+if instance_exists(target) {
+	x = target.x
+	y = target.y - 24
+}

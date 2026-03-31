@@ -1,1 +1,1 @@
-camera_player = obj_player
+target = obj_player

@@ -72,7 +72,8 @@ if global.current_player == id {
 			if image_xscale == -1 {image_xscale = 1;}
 			sprite_index = spr_player_tackle;
 			can_move = false;
-			can_tackle = false
+			can_tackle = false;
+			sliding = true;
 		}
 	}
 	
@@ -88,7 +89,7 @@ if global.current_player == id {
 		}
 	}
 	
-	if global.ball_scored == true {
+	if global.ball_scored == true or obj_game.game_stop == true{
 		can_move = false
 		sprite_index = spr_player_idle
 	}
@@ -128,8 +129,6 @@ if global.current_player != id {
 
 	    case states.go_home:
 			// code to make player go back to position
-			position_home_x = room_width/2 + 64;
-			position_home_y = room_height/2;
 			move_towards_point(position_home_x, position_home_y, walkspeed);
 			
 	        var _dist = point_distance(x, y, position_home_x, position_home_y);

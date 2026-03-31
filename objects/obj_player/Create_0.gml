@@ -5,10 +5,13 @@ depth = 3
 kick_cooldown = 0
 can_move = true
 can_tackle = true
+sliding = false
 
 // Player stats
 team = ""
-positions = ["ST", "RW", "LW", "CM", "CAM", "CDM", "CB", "FB", "GK"]
+position = ""
+position_home_x = x
+position_home_y = y
 walkspeed = 2
 kick_power = 2
 kick_power_original = kick_power
