@@ -26,7 +26,7 @@ if global.current_player == id {
 		if hspeed < 0 {image_xscale = -1;}
 		
 		// Kicking
-		if _click {
+		if _click and obj_ball.in_possession {
 			kick_cooldown = 15;
 			with instance_nearest(x,y, obj_ball) {
 				if in_possession {
@@ -47,7 +47,7 @@ if global.current_player == id {
 		}
 	
 		// Kicking power
-		if mouse_check_button(1) {
+		if mouse_check_button(1) and obj_ball.in_possession {
 			sprite_index = spr_player_kicking;
 			image_index = 0;
 			image_speed = 0;
@@ -59,7 +59,7 @@ if global.current_player == id {
 		}
 	
 		// Moving while kicking
-		if mouse_check_button(1) {walkspeed = 1;}
+		if mouse_check_button(1) and obj_ball.in_possession {walkspeed = 1;}
 		else {walkspeed = 2;}
 		
 		// Tackling
@@ -102,9 +102,9 @@ if global.current_player != id {
 	    case states.ready:
 	        // Code to return to home position or chase ball
 	        if not obj_ball.in_possession {
-				var _other = instance_nearest(x,y, obj_player);
-				var _other_ball_distance = point_distance(_other.x, _other.y, obj_ball.x, obj_ball.y);
-				if (_other_ball_distance > distance_to_object(obj_ball)) {
+				var _ball_distance = distance_to_object(obj_ball);
+				var _other_player_distance = distance_to_object(instance_nearest(x, y, obj_player));
+				if _ball_distance - _other_player_distance > 0 {
 					state = states.chase_ball;
 				}
 	        }
@@ -125,6 +125,9 @@ if global.current_player != id {
 	            global.current_player = id;
 				state = states.go_home;
 	        }
+			if obj_ball.in_possession {
+				state = states.go_home;
+			}
 	        break;
 
 	    case states.go_home:

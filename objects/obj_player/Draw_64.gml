@@ -1,5 +1,5 @@
 if global.current_player == id {
-	if mouse_check_button(1) {
+	if mouse_check_button(1) and obj_ball.in_possession {
 		
 		// Power bar size
 		var _bar_width = 64;
