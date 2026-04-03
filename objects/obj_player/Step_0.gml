@@ -102,47 +102,44 @@ if global.current_player != id {
 	    case states.ready:
 	        // Code to return to home position or chase ball
 	        if not obj_ball.in_possession {
-				var _ball_distance = distance_to_object(obj_ball);
-				var _other_player_distance = distance_to_object(instance_nearest(x, y, obj_player));
-				if _ball_distance - _other_player_distance > 0 {
+				if instance_nearest(obj_ball.x, obj_ball.y, obj_player) = id {
 					state = states.chase_ball;
 				}
 	        }
-			else {
-				state = states.go_home;
-			}
+			else {state = states.go_home;}
 	        break;
         
 	    case states.chase_ball:
 			walkspeed = 2;
-	        // Code to move towards the ball
 			if not obj_ball.in_possession {
+				// Run towards the ball
 				direction = point_direction(x, y, obj_ball.x, obj_ball.y);
 				speed = walkspeed;
 			}
 	        if (place_meeting(x, y, obj_ball)) {
-	            // Check if player has the ball
+	            // If they touch the ball while chasing
 	            global.current_player = id;
 				state = states.go_home;
 	        }
-			if obj_ball.in_possession {
-				state = states.go_home;
-			}
+			if obj_ball.in_possession {state = states.go_home;}
 	        break;
 
 	    case states.go_home:
+			var adjusted_home_x = position_home_x
+			var adjusted_home_y = position_home_y
 			// code to make player go back to position
-			move_towards_point(position_home_x, position_home_y, walkspeed);
-			
-	        var _dist = point_distance(x, y, position_home_x, position_home_y);
+			move_towards_point(adjusted_home_x, adjusted_home_y, walkspeed);
+	        var _dist = point_distance(x, y, adjusted_home_x, adjusted_home_y);
 			if (_dist <= speed) {
 			    speed = 0;
-			    x = position_home_x;
-			    y = position_home_y;
+			    x = adjusted_home_x;
+			    y = adjusted_home_y;
 				state = states.ready;
 			}
 	        break;
 	}
+	
+	if not sliding {image_angle = 0}
 	
 	if speed > 0 {sprite_index = spr_player_running;}
 	else {sprite_index = spr_player_idle;}
