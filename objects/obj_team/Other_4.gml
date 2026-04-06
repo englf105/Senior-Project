@@ -15,6 +15,8 @@ if room == rm_field {
 			var player = instance_create_layer(positions[i][0], positions[i][1], "Instances", obj_player)
 			player.team = 1
 			player.position = positions[i]
+			player.minimum_x = positions[i][2]
+			player.maximum_x = positions[i][3]
 			
 			// Setting closest player to ball as the current player
 			if global.current_player == 0 {global.current_player = player}

@@ -127,8 +127,12 @@ if global.current_player != id {
 	        break;
 
 	    case states.go_home:
-			var adjusted_home_x = position_home_x
+			var adjusted_home_x = position_home_x - (room_width/2 - obj_ball.x)
+			
+			clamp(adjusted_home_x, minimum_x, maximum_x)
+			
 			var adjusted_home_y = position_home_y
+			
 			// code to make player go back to position
 			move_towards_point(adjusted_home_x, adjusted_home_y, walkspeed);
 	        var _dist = point_distance(x, y, adjusted_home_x, adjusted_home_y);
