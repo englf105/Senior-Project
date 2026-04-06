@@ -1,5 +1,7 @@
 // Create the players on the team
 if room == rm_field {
+	global.current_player = 0;
+	
 	if obj_game.team1 == id {
 		// Create the arrow for the player the user will control
 		var user_arrow = instance_create_layer(x, y, "Instances", obj_player_arrow)
@@ -16,6 +18,7 @@ if room == rm_field {
 			
 			// Setting closest player to ball as the current player
 			if global.current_player == 0 {global.current_player = player}
+			if not instance_exists(obj_ball) {instance_create_layer(room_width/2, room_height/2, "Instances", obj_ball)}
 			var player_dist = point_distance(player.x, player.y, obj_ball.x, obj_ball.y)
 			var current_dist = point_distance(global.current_player.x, global.current_player.y, obj_ball.x, obj_ball.y)
 			if player_dist <= current_dist {player = global.current_player}

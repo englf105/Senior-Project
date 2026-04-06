@@ -1,3 +1,6 @@
+// Depth
+depth = y * -1
+
 // Bounce off walls
 if ((x <= 0) || (x >= room_width)){hspeed = -hspeed;} // Horizontal collision
 if ((y <= 0) || (y >= room_height)) {vspeed = -vspeed;} // Vertical collision
@@ -31,25 +34,32 @@ if in_possession {
 	
 	// Ball placement when in possession
 	if global.current_player.can_move {
-		x = global.current_player.x + (4 * global.current_player.image_xscale) + (2 * global.current_player.hspeed)
+		x = global.current_player.x + (4 * global.current_player.image_xscale) + (2 * global.current_player.hspeed);
 		y = global.current_player.y + 12
+	}
+	else if global.current_player.sliding {
+		x = global.current_player.x;
+		y = global.current_player.y;
+		var offset = global.current_player.direction;
+		
+	
 	}
 	else {
 		// If the ball is in possession but the player cannot move
 		if global.current_player.speed != 0 {
-			speed = global.current_player.speed
+			speed = global.current_player.speed;
 		}
-		x = global.current_player.x
-		y = global.current_player.y
+		x = global.current_player.x;
+		y = global.current_player.y + 12;
 	}
 	
 	// Ball animations 
-	if global.current_player.speed > 0 {image_speed = global.current_player.speed/2}
-	else {image_speed = 0}
-	image_xscale = sign(global.current_player.hspeed)
-	if global.current_player.speed = 0 or global.current_player.vspeed != 0 {image_xscale = 1}
+	if global.current_player.speed > 0 {image_speed = global.current_player.speed/2;}
+	else {image_speed = 0;}
+	image_xscale = sign(global.current_player.hspeed);
+	if global.current_player.speed = 0 or global.current_player.vspeed != 0 {image_xscale = 1;}
 }
 
 if global.ball_scored == true {
-	can_possess = false
+	can_possess = false;
 }

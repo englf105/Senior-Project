@@ -24,6 +24,7 @@ if f3_screen {
 	draw_text(10, 10 , "Current_player: " + string(global.current_player))
 	draw_text(10, 30 , "Current_player_x: " + string(global.current_player.x))
 	draw_text(10, 50 , "Current_player_y: " + string(global.current_player.y))
-	draw_text(10, 70 , "Camera_instance: " + string(obj_camera.target))
-	draw_text(10, 90 , "Arrow_instance: " + string(obj_player_arrow.target))
+	draw_text(10, 70 , "Current_player_depth: " + string(global.current_player.depth))
+	draw_text(10, 90 , "Camera_instance: " + string(obj_camera.target))
+	draw_text(10, 110 , "Arrow_instance: " + string(obj_player_arrow.target))
 }

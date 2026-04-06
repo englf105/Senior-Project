@@ -9,6 +9,8 @@ var _tackle = keyboard_check_pressed(vk_space);
 var _hsp = _right - _left;
 var _vsp = _down - _up;
 
+depth = y * -1
+
 // If this player is the current player
 if global.current_player == id {
 	if can_move {
