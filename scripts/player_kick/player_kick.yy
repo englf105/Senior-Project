@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"player_kick",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"player_kick",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -8,6 +8,7 @@ sliding = false
 
 // Player stats
 team = ""
+
 position = ""
 position_home_x = x
 position_home_y = y
@@ -25,8 +26,7 @@ kick_power_max = 12
 enum states {
     ready,
     chase_ball,
-	open_up,
-    go_home
+    go_home,
 }
 
 state = states.go_home;
