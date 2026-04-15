@@ -16,11 +16,14 @@ minute = 6;
 second_0 = "0";
 second = 0;
 
+// Game info
+possession = 0
+
 // Objects in game
 team1 = "";
 team2 = "";
 
 // Teams
 global.team1 = instance_create_layer(x, y, "Instances", obj_team);
-global.team2 = instance_create_layer(x, y, "Instances", obj_team);
+global.team2 = instance_create_layer(x, y, "Instances", obj_enemy_team);
 

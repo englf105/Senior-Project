@@ -57,6 +57,7 @@ if global.current_player == id {
 // Ai scripts
 if global.current_player != id {
 	switch (state) {
+		
 	    case states.ready:
 	        // Code to return to home position or chase ball
 	        if not obj_ball.in_possession {

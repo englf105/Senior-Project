@@ -10,8 +10,8 @@
   "name":"obj_ball",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"ball",
+    "path":"folders/Objects/ball.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -1,9 +1,9 @@
-// Create the players on the team
+
 if room == rm_field {
-	
+
 	global.current_player = 0;
 	
-	if obj_game.team1 == id {
+	if obj_game.team2 == id {
 		// Create the arrow for the player the user will control
 		var user_arrow = instance_create_layer(x, y, "Instances", obj_player_arrow)
 		
@@ -13,7 +13,7 @@ if room == rm_field {
 	
 		// Spawn in the players on the team
 		for (var i = 0; i < 10; i += 1) {
-			var player = instance_create_layer(positions[i][0], positions[i][1], "Instances", obj_player)
+			var player = instance_create_layer(positions[i][0], positions[i][1], "Instances", obj_enemy)
 			player.team = 1
 			player.position = positions[i]
 			player.minimum_x = positions[i][2]

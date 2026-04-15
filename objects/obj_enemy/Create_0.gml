@@ -17,12 +17,11 @@ kick_power = 2
 kick_power_original = kick_power
 kick_power_max = 12
 
-// Teammate Ai
-enum states {
+// Enemy Ai
+enum enemy_states {
     ready,
     chase_ball,
     go_home,
 }
 
-state = states.go_home;
-
+state = enemy_states.go_home;
