@@ -24,6 +24,6 @@ team1 = "";
 team2 = "";
 
 // Teams
-global.team1 = instance_create_layer(x, y, "Instances", obj_team);
-global.team2 = instance_create_layer(x, y, "Instances", obj_team);
+global.team1 = instance_create_layer(room_width/2 - 10, y, "Instances", obj_team);
+global.team2 = instance_create_layer(room_width/2 + 10, y, "Instances", obj_team);
 

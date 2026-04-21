@@ -1,9 +1,10 @@
 // Drawing arrow above current player
-
 if arrow = 0 {
 	image_index = 0
 	
-	target = global.current_player
+	if global.current_player.team == 1 {
+		target = global.current_player
+	}
 	
 	if instance_exists(target) {
 		x = target.x

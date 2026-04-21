@@ -2,7 +2,7 @@
 depth = y * -1
 
 // Bounce off walls
-if ((x <= 0) || (x >= room_width)){hspeed = -hspeed;} // Horizontal collision
+if ((x <= 0) || (x >= room_width)) {hspeed = -hspeed;} // Horizontal collision
 if ((y <= 0) || (y >= room_height)) {vspeed = -vspeed;} // Vertical collision
 
 // When the ball is moving

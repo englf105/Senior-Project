@@ -1,4 +1,6 @@
-side = 1
+has_player = false
+if x < room_width/2 {side = 1}
+else {side = -1}
 
 // Info on position home x, position home y, minimum x, maximium x
 ST_info = [room_width/2 - (80 * side), room_height/2, 215, 855]
