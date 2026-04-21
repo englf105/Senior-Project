@@ -113,6 +113,56 @@ if team == 1
 	}
 	
 if team == 2 {
-
-
+	// Is the ball in possession?
+	if obj_ball.in_possession {
+		
+		// Does my team have the ball?
+		if global.current_player.team == 2 {
+			
+			// Do I have the ball?
+			if global.current_player == id {
+			
+				// Is there a player in the way of a goal?
+				var other_goal = global.goal1
+				var player_in_front = collision_line(x, y, other_goal.x, other_goal.y, obj_player, false, false)
+				
+				if player_in_front {
+					// is there a clear line to the closest teammate?
+					if teammate_open {
+						// Pass the ball to them
+					}
+					else {
+						// Am I on the right side of the field?
+						if x > room_width/2 {
+							// move along the y-axis away from that player
+						}
+						else {
+							// pass the ball to the farthest player from me
+						}
+					}
+				}
+				else {
+					// Am I in range of the goal?
+					if point_distance(x, y, other_goal.x, other_goal.y) <= 100 {
+						// shoot the ball at the goal
+						
+					}
+					else {
+						// move towards the goal
+						move_towards_point(other_goal.x, other_goal.y, walkspeed);
+					}
+				}
+			}
+		}
+	}
+	else {
+		// Am I the closest player to the ball on my team?
+		if instance_nearest(obj_ball.x, obj_ball.y, obj_player) = id {
+			// Move towards ball
+			move_towards_point(obj_ball.x, obj_ball.y, walkspeed);
+		}
+		else
+		
+	
+	}
 }
