@@ -1,7 +1,7 @@
-function player_tackle(_tackle){
+function player_tackle(_direction){
 	// Tackling
-	if _tackle and can_tackle and not obj_ball.in_possession {
-		direction = point_direction(x, y, mouse_x, mouse_y);
+	if can_tackle and not obj_ball.in_possession {
+		direction = _direction
 		image_angle = direction;
 		speed = 8;
 		if hspeed > 0 {image_yscale = 1;}
