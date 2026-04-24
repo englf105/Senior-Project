@@ -143,7 +143,7 @@ if team == 2 {
 						// Am I on the right side of the field?
 						if x > room_width/2 {
 							// move along the y-axis away from that nearest enemy
-							var _nearest_enemy = instance_nearest(x, y, nearest_inst_with(team == 1))
+							var _nearest_enemy = nearest_inst_with(team == 1)
 							y -= sign(_nearest_enemy.y - y) * walkspeed;
 						}
 						else {
@@ -172,7 +172,7 @@ if team == 2 {
 		}
 		else {
 			// Am I the closest player to the player with the ball?
-			if instance_nearest(global.current_player.x, global.current_player.y, nearest_inst_with (team == 2)) = id {
+			if instance_nearest(global.current_player.x, global.current_player.y, nearest_inst_with(team == 2)) = id {
 				// Is that player in range of being tackled?
 				if point_distance(x, y, global.current_player.x, global.current_player.y) <= 30 {
 					// Tackle the player
