@@ -1,12 +1,20 @@
+<<<<<<< HEAD
 function player_kick(_is_kicking){
+=======
+function player_kick(_click){
+>>>>>>> dfff2e77f2b49f639c3a00e7f43fe6d191fe60c5
 	
 	// Kicking
-	if _is_kicking and obj_ball.in_possession {
+	if _click and obj_ball.in_possession {
 		kick_cooldown = 15;
 		with instance_nearest(x,y, obj_ball) {
 			if in_possession {
 				in_possession = false;
+<<<<<<< HEAD
 				direction = point_direction(x, y, mouse_x, mouse_y);
+=======
+				direction = point_direction(x, y, mouse_x, mouse_y)
+>>>>>>> dfff2e77f2b49f639c3a00e7f43fe6d191fe60c5
 				speed = global.current_player.kick_power;
 				alarm[0] = 15;
 			}
