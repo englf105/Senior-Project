@@ -1,2 +1,2 @@
-// Tackle cooldown
+/// @description Tackle cooldown
 can_tackle = true;

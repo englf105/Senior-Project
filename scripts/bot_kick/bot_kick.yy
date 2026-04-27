@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"bot_kick",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"bot_kick",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

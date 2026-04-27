@@ -4,6 +4,7 @@ kick_cooldown = 0
 can_move = true
 can_tackle = true
 sliding = false
+kicking = false
 
 // Player stats
 team = ""

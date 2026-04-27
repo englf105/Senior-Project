@@ -48,6 +48,7 @@
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_team","path":"objects/obj_team/obj_team.yy",},},
     {"id":{"name":"rm_field","path":"rooms/rm_field/rm_field.yy",},},
+    {"id":{"name":"bot_kick","path":"scripts/bot_kick/bot_kick.yy",},},
     {"id":{"name":"player_kick","path":"scripts/player_kick/player_kick.yy",},},
     {"id":{"name":"player_tackle","path":"scripts/player_tackle/player_tackle.yy",},},
     {"id":{"name":"sha_jersey","path":"shaders/sha_jersey/sha_jersey.yy",},},

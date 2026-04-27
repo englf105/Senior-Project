@@ -3,7 +3,7 @@ depth = y * -1
 
 // If this player is the current player
 if team == 1
-	if global.current_player == id {
+	if global.current_player == id{
 		var _up = keyboard_check(ord("W"));
 		var _down = keyboard_check(ord("S"));
 		var _left = keyboard_check(ord("A"));
@@ -29,16 +29,12 @@ if team == 1
 			if hspeed > 0 {image_xscale = 1;}
 			if hspeed < 0 {image_xscale = -1;}
 		
-			// Get the direction towards the mouse
-			var _direction = point_direction(x, y, mouse_x, mouse_y);
-		
 			// Kicking
-			if _click{
-				player_kick(_direction)
-			}
+			player_kick(_click)
 		
 			// Tackling
 			if _tackle {
+				var _direction = point_direction(x, y, mouse_x, mouse_y);
 				player_tackle(_direction);
 			}
 		}
@@ -158,8 +154,7 @@ if team == 2 {
 					// Am I in range of the goal?
 					if point_distance(x, y, other_goal.x, other_goal.y) <= 100 {
 						// shoot the ball at the goal
-						var _dir_shoot = point_direction(x, y, other_goal.x, other_goal.y);
-						player_kick(_dir_shoot);
+						bot_kick(other_goal);
 					}
 					else {
 						// move towards the goal
