@@ -140,7 +140,7 @@ if team == 2 {
 						// Am I on the right side of the field?
 						if x > room_width/2 {
 							// move along the y-axis away from that nearest enemy
-							_nearest_enemy = instance_nearest(x, y, obj_player)
+							var _nearest_enemy = instance_nearest(x, y, obj_player)
 							y -= sign(_nearest_enemy.y - y) * walkspeed;
 						}
 						else {
@@ -163,15 +163,7 @@ if team == 2 {
 				}
 			}
 			else {
-				// Am I on the right side of the field?
-				if x > room_width/2 {
-					// Change x according to how far the ball is on the field
-					
-				}
-				else {
-					// Change x by a smaller amount for how far the ball is on my side
-			
-				}
+				player_get_to_position()
 			}
 		}
 		else {
@@ -215,15 +207,7 @@ if team == 2 {
 					}
 				}
 				else {
-					// Am I on the right side of the field?
-					if x > room_width/2 {
-						// Change x according to how far the ball is on the field
-			
-					}
-					else {
-						// Change x by a smaller amount for how far the ball is on my side
-			
-					}
+					player_get_to_position()
 				}
 			}
 		}
@@ -236,15 +220,14 @@ if team == 2 {
 			move_towards_point(obj_ball.x, obj_ball.y, walkspeed);
 		}
 		else {
-			// Am I on the right side of the field?
-			if x > room_width/2 {
-				// Change x according to how far the ball is on the field
-			
-			}
-			else {
-				// Change x by a smaller amount for how far the ball is on my side
-			
-			}
+			player_get_to_position()
 		}	
 	}
+	
+	// Animation code
+	if not sliding {image_angle = 0}
+	if speed > 0 {sprite_index = spr_player_running;}
+	else {sprite_index = spr_player_idle;}
+	if hspeed > 0 {image_xscale = 1;}
+	if hspeed < 0 {image_xscale = -1;}
 }
