@@ -111,7 +111,7 @@ else {
 	
 // Animation code
 if not sliding {image_angle = 0}
-if speed > 0 {sprite_index = spr_player_running;}
-else {sprite_index = spr_player_idle;}
+if speed > 0 {sprite_index = spr_enemy_running;}
+else {sprite_index = spr_enemy_idle;}
 if hspeed > 0 {image_xscale = 1;}
 if hspeed < 0 {image_xscale = -1;}
