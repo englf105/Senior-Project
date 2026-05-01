@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"nearest_inst_with",
+  "%Name":"nearest_player_with",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"nearest_inst_with",
+  "name":"nearest_player_with",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

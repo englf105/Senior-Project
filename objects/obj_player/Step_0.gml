@@ -116,6 +116,10 @@ if team == 1
 	}
 	
 if team == 2 {
+	
+	var _closest_teammate = nearest_player_with(2)
+	var _closest_enemy = nearest_player_with(1)
+	
 	// Is the ball in possession?
 	if obj_ball.in_possession {
 		// Does my team have the ball?
@@ -128,24 +132,22 @@ if team == 2 {
 				
 				if player_in_front {
 					// is there a clear line to the closest teammate?
-					var closest_teammate = instance_nearest(x, y, obj_player)
-					var teammate_open = collision_line(x, y, closest_teammate.x, closest_teammate.y, obj_player, false, false)
+					var teammate_open = collision_line(x, y, _closest_teammate.x, _closest_teammate.y, obj_player, false, false)
 					
 					if teammate_open {
 						// Pass the ball to them
-						var _dir_pass = point_direction(x, y, closest_teammate.x, closest_teammate.y);
+						var _dir_pass = point_direction(x, y, _closest_teammate.x, _closest_teammate.y);
 						player_kick(_dir_pass);
 					}
 					else {
 						// Am I on the right side of the field?
 						if x > room_width/2 {
 							// move along the y-axis away from that nearest enemy
-							var _nearest_enemy = instance_nearest(x, y, obj_player)
-							y -= sign(_nearest_enemy.y - y) * walkspeed;
+							y -= sign(_closest_enemy.y - y) * walkspeed;
 						}
 						else {
 							// pass the ball to the closest player to me
-							var _dir_pass = point_direction(x, y, closest_teammate.x, closest_teammate.y);
+							var _dir_pass = point_direction(x, y, _closest_teammate.x, _closest_teammate.y);
 							player_kick(_dir_pass);
 						}
 					}
@@ -167,8 +169,17 @@ if team == 2 {
 			}
 		}
 		else {
-			// Am I the closest player to the player with the ball?
-			if instance_nearest(global.current_player.x, global.current_player.y, obj_player) = id {
+			
+			var closest_on_team = undefined
+			with global.current_player {
+				if nearest_player_with(2) == other.id {
+					closest_on_team = other.id
+				}
+			}
+			
+			
+			// Am I the closest player on my team to the player with the ball?
+			if closest_on_team == id {
 				// Is that player in range of being tackled?
 				if point_distance(x, y, global.current_player.x, global.current_player.y) <= 30 {
 					// Tackle the player
@@ -181,24 +192,21 @@ if team == 2 {
 				}
 			}
 			else {
-				// Find the enemy closest to me
-				var _enemy_to_mark = instance_nearest(x, y, obj_player)
-				var _closest_teammate = instance_nearest(x, y, obj_player)
 				
 				// Is there a teammate closer to them?
-				var _my_dist = point_distance(x, y, _enemy_to_mark.x, _enemy_to_mark.y)
-				var _teammate_dist = point_distance(_closest_teammate.x, _closest_teammate.y, _enemy_to_mark.x, _enemy_to_mark.y)
+				var _my_dist = point_distance(x, y, _closest_enemy.x, _closest_enemy.y)
+				var _teammate_dist = point_distance(_closest_teammate.x, _closest_teammate.y, _closest_enemy.x, _closest_enemy.y)
 				
 				if _my_dist < _teammate_dist {
 					// Move inbetween the guy to mark and the current player
-					var _in_range = collision_circle(_enemy_to_mark.x, _enemy_to_mark.y, 50, id, false, true)
+					var _in_range = collision_circle(_closest_enemy.x, _closest_enemy.y, 50, id, false, true)
 					if not _in_range {
-						move_towards_point(_enemy_to_mark.x, _enemy_to_mark.y, walkspeed);
+						move_towards_point(_closest_enemy.x, _closest_enemy.y, walkspeed);
 					}
 					else {
 						// check to see if the player will move out of range
-						var next_x = _enemy_to_mark.x + hspeed;
-						var next_y = _enemy_to_mark.y + vspeed;
+						var next_x = _closest_enemy.x + hspeed;
+						var next_y = _closest_enemy.y + vspeed;
 
 						// Check if there is NO collision at the next position
 						if collision_circle(next_x, next_y, 50, id, false, true) {
@@ -215,7 +223,15 @@ if team == 2 {
 	else {
 		
 		// Am I the closest player to the ball on my team?
-		if instance_nearest(obj_ball.x, obj_ball.y, obj_player) = id {
+		
+		var closest_on_team = undefined
+		with obj_ball {
+			if nearest_player_with(2) == other.id {
+				closest_on_team = other.id
+			}
+		}
+		
+		if closest_on_team == id {
 			// Move towards ball
 			move_towards_point(obj_ball.x, obj_ball.y, walkspeed);
 		}
