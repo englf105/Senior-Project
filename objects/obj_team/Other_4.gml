@@ -20,30 +20,30 @@ if room == rm_field {
 			player.maximum_x = positions[i][3]
 			
 			// Setting closest player to ball as the current player
-			if global.current_player == 0 {global.current_player = player}
-			if not instance_exists(obj_ball) {instance_create_layer(room_width/2, room_height/2, "Instances", obj_ball)}
+			if global.current_player == 0 {
+				global.current_player = player
+			}
+			if not instance_exists(obj_ball) {
+				instance_create_layer(room_width/2, room_height/2, "Instances", obj_ball)
+			}
 			var player_dist = point_distance(player.x, player.y, obj_ball.x, obj_ball.y)
 			var current_dist = point_distance(global.current_player.x, global.current_player.y, obj_ball.x, obj_ball.y)
-			if player_dist <= current_dist {player = global.current_player}
+			if player_dist <= current_dist {
+				player = global.current_player
+			}
 		}
+		obj_camera.target = global.current_player
 	}
 	
 	if obj_game.team2 == id {
 	
 		// Spawn in the players on the team
 		for (var i = 0; i < 10; i += 1) {
-			var player = instance_create_layer(positions[i][0], positions[i][1], "Instances", obj_player)
+			var player = instance_create_layer(positions[i][0], positions[i][1], "Instances", obj_enemy)
 			player.team = 2
 			player.position = positions[i]
 			player.minimum_x = positions[i][2]
 			player.maximum_x = positions[i][3]
-			
-			// Setting closest player to ball as the current player
-			if global.current_player == 0 {global.current_player = player}
-			if not instance_exists(obj_ball) {instance_create_layer(room_width/2, room_height/2, "Instances", obj_ball)}
-			var player_dist = point_distance(player.x, player.y, obj_ball.x, obj_ball.y)
-			var current_dist = point_distance(global.current_player.x, global.current_player.y, obj_ball.x, obj_ball.y)
-			if player_dist <= current_dist {player = global.current_player}
 		}
 	}
 }

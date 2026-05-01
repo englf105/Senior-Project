@@ -23,6 +23,14 @@ if can_possess {
 	if place_meeting(x, y, obj_player) {
 		with (instance_nearest(x, y, obj_player)) {
 			global.current_player = id
+			obj_camera.target = id
+		}
+		can_possess = false
+		in_possession = true
+	}
+	if place_meeting(x, y, obj_enemy) {
+		with (instance_nearest(x, y, obj_enemy)) {
+			global.current_player = id
 		}
 		can_possess = false
 		in_possession = true

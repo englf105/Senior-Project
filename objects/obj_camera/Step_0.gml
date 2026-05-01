@@ -18,7 +18,3 @@ if (instance_exists(target)) {
 	// Update the camera's position
 	camera_set_view_pos(view_camera[0], _cam_x, _cam_y);
 }
-
-if global.current_player != target and global.current_player.team == 1 {
-	target = instance_find(global.current_player, 0);
-}

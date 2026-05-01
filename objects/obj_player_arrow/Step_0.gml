@@ -2,7 +2,7 @@
 if arrow = 0 {
 	image_index = 0
 	
-	if global.current_player.team == 1 {
+	if global.current_player == obj_player {
 		target = global.current_player
 	}
 	
