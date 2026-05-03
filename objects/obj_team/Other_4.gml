@@ -32,7 +32,9 @@ if room == rm_field {
 				player = global.current_player
 			}
 		}
-		obj_camera.target = global.current_player
+		if instance_exists(obj_camera) {
+			obj_camera.target = global.current_player
+		}
 	}
 	
 	if obj_game.team2 == id {

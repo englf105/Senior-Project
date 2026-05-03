@@ -8,6 +8,9 @@ if (room == rm_field) {
 	team1 = global.team1
 	team2 = global.team2
 	
-	instance_create_layer(room_width/2, room_height/2, "Instances", obj_camera)
+	if not instance_exists(obj_camera) {
+		instance_create_layer(room_width/2, room_height/2, "Instances", obj_camera)
+		obj_camera.target = global.current_player
+	}
 	
 }
