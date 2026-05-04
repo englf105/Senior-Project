@@ -30,6 +30,7 @@ if room == rm_field {
 			var current_dist = point_distance(global.current_player.x, global.current_player.y, obj_ball.x, obj_ball.y)
 			if player_dist <= current_dist {
 				player = global.current_player
+				global.current_user = player
 			}
 		}
 		if instance_exists(obj_camera) {

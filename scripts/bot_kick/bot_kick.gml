@@ -7,19 +7,14 @@ function bot_kick(_inst){
 				
 	}
 			
-	if _distance_to_inst <= 25 {
-		with instance_nearest(x,y, obj_ball) {
-			if in_possession {
-				in_possession = false;
-				direction = point_direction(x, y, _inst.x, _inst.y);
-				speed = global.current_player.kick_power;
-				kicking = false
-			}
+	with instance_nearest(x,y, obj_ball) {
+		if in_possession {
+			in_possession = false;
+			direction = point_direction(x, y, _inst.x, _inst.y);
+			speed = global.current_player.kick_power;
+			kicking = false
 		}
 	}
-	if _distance_to_inst <= 50 {}
-			
-	if _distance_to_inst <= 100 {}
 		
 	if obj_ball.in_possession and kicking {walkspeed = 1;}
 	else {walkspeed = 2;}

@@ -7,6 +7,8 @@ f3_screen = false
 
 // Score
 global.current_player = 0;
+global.current_user = 0;
+global.past_current_player = 0;
 global.ball_scored = false;
 global.rScore = 0;
 global.lScore = 0;

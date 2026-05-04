@@ -1,3 +1,5 @@
+
+
 if room = rm_field {
 	// Timer
 	if alarm[0] < 0 {alarm[0] = 60;}

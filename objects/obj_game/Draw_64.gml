@@ -27,4 +27,5 @@ if f3_screen {
 	draw_text(10, 70 , "Current_player_depth: " + string(global.current_player.depth))
 	draw_text(10, 90 , "Camera_instance: " + string(obj_camera.target))
 	draw_text(10, 110 , "Arrow_instance: " + string(obj_player_arrow.target))
+	draw_text(10, 130 , "Arrow_instance: " + string(global.current_user))
 }

@@ -2,7 +2,7 @@
 depth = y * -1
 
 // If this player is the current player
-if global.current_player == id {
+if global.current_user == id {
 	var _up = keyboard_check(ord("W"));
 	var _down = keyboard_check(ord("S"));
 	var _left = keyboard_check(ord("A"));
@@ -38,8 +38,11 @@ if global.current_player == id {
 		}
 	}
 	
-	// Tackling
+	// While Tackling
 	if can_move == false {
+		if place_meeting(x, y, obj_ball) {
+			global.current_player = id
+		}
 		if speed > 0 {speed -= 0.5;}
 		if speed == 0 {
 			if can_tackle == false {
@@ -58,7 +61,7 @@ if global.current_player == id {
 
 
 // Ai scripts
-if global.current_player != id {
+if global.current_user != id {
 	switch (state) {
 		
 		case states.ready:

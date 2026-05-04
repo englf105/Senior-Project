@@ -21,7 +21,7 @@ if obj_ball.in_possession {
 				if teammate_open {
 					// Pass the ball to them
 					var _dir_pass = point_direction(x, y, _closest_teammate.x, _closest_teammate.y);
-					player_kick(_dir_pass);
+					bot_kick(_dir_pass);
 				}
 				else {
 					// Am I on the right side of the field?
@@ -32,7 +32,7 @@ if obj_ball.in_possession {
 					else {
 						// pass the ball to the closest player to me
 						var _dir_pass = point_direction(x, y, _closest_teammate.x, _closest_teammate.y);
-						player_kick(_dir_pass);
+						bot_kick(_dir_pass);
 					}
 				}
 			}
