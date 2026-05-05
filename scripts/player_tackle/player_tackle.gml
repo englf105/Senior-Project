@@ -12,12 +12,6 @@ function player_tackle(_direction){
 		if hspeed < 0 {image_yscale = -1;}
 		if image_xscale == -1 {image_xscale = 1;}
 		
-		if (id.object_index == obj_player) {
-			sprite_index = spr_player_tackle;
-		}
-		if (id.object_index == obj_enemy) {
-			sprite_index = spr_enemy_tackle;
-		}
 		can_move = false;
 		can_tackle = false;
 		sliding = true;

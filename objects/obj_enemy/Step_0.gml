@@ -23,8 +23,6 @@ if can_move {
 						// Pass the ball to them
 						var _dir_pass = point_direction(x, y, _closest_teammate.x, _closest_teammate.y);
 						bot_kick(_dir_pass);
-						can_move = false;
-						alarm[0] = 60;
 					}
 					else {
 						// Am I on the right side of the field?
@@ -36,8 +34,6 @@ if can_move {
 							// pass the ball to the closest player to me
 							var _dir_pass = point_direction(x, y, _closest_teammate.x, _closest_teammate.y);
 							bot_kick(_dir_pass);
-							can_move = false;
-						alarm[0] = 60;
 						}
 					}
 				}
@@ -46,8 +42,6 @@ if can_move {
 					if point_distance(x, y, other_goal.x, other_goal.y) <= 100 {
 						// shoot the ball at the goal
 						bot_kick(other_goal);
-						can_move = false;
-						alarm[0] = 60;
 					}
 					else {
 						// move towards the goal
@@ -138,3 +132,4 @@ if speed > 0 {sprite_index = spr_enemy_running;}
 else {sprite_index = spr_enemy_idle;}
 if hspeed > 0 {image_xscale = 1;}
 if hspeed < 0 {image_xscale = -1;}
+if sliding {sprite_index = spr_enemy_tackle;}

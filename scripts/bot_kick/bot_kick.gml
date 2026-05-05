@@ -7,11 +7,13 @@ function bot_kick(_inst){
 			if in_possession {
 				in_possession = false;
 				direction = point_direction(x, y, _inst.x, _inst.y);
-				speed = global.current_player.kick_power;
+				speed = 10;
 				can_possess = false
 				alarm[0] = 60
 			}
 		}
+		can_move = false
 		can_possess = false
+		alarm[0] = 60
 	}
 }

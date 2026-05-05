@@ -57,6 +57,8 @@ if global.current_user == id {
 		can_move = false
 		sprite_index = spr_player_idle
 	}
+
+	if sliding {sprite_index = spr_player_tackle;}
 }
 
 
@@ -114,5 +116,5 @@ if global.current_user != id {
 	else {sprite_index = spr_player_idle;}
 	if hspeed > 0 {image_xscale = 1;}
 	if hspeed < 0 {image_xscale = -1;}
-	
+	if sliding {sprite_index = spr_player_tackle;}
 }

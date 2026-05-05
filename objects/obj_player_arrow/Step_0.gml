@@ -1,9 +1,10 @@
 // Drawing arrow above current player
 if arrow = 0 {
+	
 	image_index = 0
 	
-	if global.current_player == obj_player {
-		target = global.current_player
+	if instance_exists(target) {
+		target = global.current_user
 	}
 	
 	if instance_exists(target) {
@@ -14,7 +15,7 @@ if arrow = 0 {
 
 // Drawing arrow above closest player
 if arrow = 1 {
-	if not obj_ball.in_possession {
+	if not obj_ball.in_possession or global.current_player.team == 2 {
 		image_index = 1
 		image_xscale = 1
 		
@@ -27,7 +28,8 @@ if arrow = 1 {
 			
 			if keyboard_check_pressed(ord("E")) {
 				target = instance_nearest(obj_ball.x, obj_ball.y, obj_player);
-				global.current_player = target
+				global.current_user = target
+				obj_camera.target = global.current_user
 			}
 		}
 	}
