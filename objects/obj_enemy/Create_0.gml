@@ -5,6 +5,7 @@ can_move = true
 can_tackle = true
 sliding = false
 kicking = false
+can_possess = true
 
 // Player stats
 team = ""

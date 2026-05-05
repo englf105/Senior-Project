@@ -1,7 +1,9 @@
 function player_kick(_is_kicking){
 	
+	var is_current = (global.current_player == id)
+	
 	// Kicking
-	if _is_kicking and obj_ball.in_possession {
+	if _is_kicking and is_current and obj_ball.in_possession {
 		kick_cooldown = 15;
 		with instance_nearest(x,y, obj_ball) {
 			if in_possession {
@@ -22,7 +24,7 @@ function player_kick(_is_kicking){
 	}
 	
 	// Kicking power
-	if mouse_check_button(1) and obj_ball.in_possession {
+	if mouse_check_button(1) and obj_ball.in_possession and is_current {
 		sprite_index = spr_player_kicking;
 		image_index = 0;
 		image_speed = 0;
@@ -34,6 +36,6 @@ function player_kick(_is_kicking){
 	}
 	
 	// Moving while kicking
-	if mouse_check_button(1) and obj_ball.in_possession {walkspeed = 1;}
+	if mouse_check_button(1) and obj_ball.in_possession and is_current {walkspeed = 1;}
 	else {walkspeed = 2;}
 }
