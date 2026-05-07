@@ -41,7 +41,14 @@ if global.current_user == id {
 	// While Tackling
 	if can_move == false {
 		if place_meeting(x, y, obj_ball) {
-			global.current_player = id
+			if obj_ball.in_possession {
+				with global.current_player {
+					can_tackle = false;
+					alarm[3] = 60;
+			
+				}
+			}
+			global.current_player = id;
 		}
 		if speed > 0 {speed -= 0.5;}
 		if speed == 0 {
@@ -64,51 +71,103 @@ if global.current_user == id {
 
 // Ai scripts
 if global.current_user != id {
-	switch (state) {
-		
-		case states.ready:
-		    // Code to return to home position or chase ball
-		    if not obj_ball.in_possession {
-				if instance_nearest(obj_ball.x, obj_ball.y, obj_player) = id {
-					state = states.chase_ball;
+	
+	var _closest_teammate = instance_nearest(x, y, obj_player);
+	var _closest_enemy = instance_nearest(x, y, obj_enemy);
+	var _closest_to_ball = instance_nearest(obj_ball.x, obj_ball.y, obj_player);
+	
+	if can_move {
+		// Is the ball in possession?
+		if obj_ball.in_possession {
+			// Does my team have the ball?
+			if global.current_player.team == 1 {
+				// Do I have the ball?
+				if global.current_player == id {
+					global.current_user = id;
+					obj_camera.target = id
 				}
-		    }
-			else {state = states.go_home;}
-		    break;
-        
-		case states.chase_ball:
-			walkspeed = 2;
-			if not obj_ball.in_possession {
-				// Run towards the ball
-				direction = point_direction(x, y, obj_ball.x, obj_ball.y);
-				speed = walkspeed;
+				else {
+					player_get_to_position()
+				}
 			}
-		    if (place_meeting(x, y, obj_ball)) {
-		        // If they touch the ball while chasing
-		        global.current_player = id;
-				state = states.go_home;
-		    }
-			if obj_ball.in_possession {state = states.go_home;}
-		    break;
+			else {
+				// Am I the closest player on my team to the player with the ball?
+				if _closest_to_ball == id {
+					// Is that player in range of being tackled?
+					if point_distance(x, y, global.current_player.x, global.current_player.y) <= 30 {
+						// Tackle the player
+						var _enemy_direction = point_direction(x, y, global.current_player.x, global.current_player.y)
+						player_tackle(_enemy_direction);
+					}
+					else {
+						// Move towards the player
+						move_towards_point(global.current_player.x, global.current_player.y, walkspeed);
+					}
+				}
+				else {
+				
+					// Is there a teammate closer to them?
+					var _my_dist = point_distance(x, y, _closest_enemy.x, _closest_enemy.y)
+					var _teammate_dist = point_distance(_closest_teammate.x, _closest_teammate.y, _closest_enemy.x, _closest_enemy.y)
+				
+					if _my_dist < _teammate_dist {
+						// Move inbetween the guy to mark and the current player
+						var _in_range = collision_circle(_closest_enemy.x, _closest_enemy.y, 50, id, false, true)
+						if not _in_range {
+							move_towards_point(_closest_enemy.x, _closest_enemy.y, walkspeed);
+						}
+						else {
+							// check to see if the player will move out of range
+							var next_x = _closest_enemy.x + hspeed;
+							var next_y = _closest_enemy.y + vspeed;
 
-		case states.go_home:
-			// Sets the players home position
-			var adjusted_home_x = position_home_x
-			var adjusted_home_y = position_home_y
-			
-			// Code to make player go back to position
-			move_towards_point(adjusted_home_x, adjusted_home_y, walkspeed);
-			
-			// To prevent the player glitching
-		    var _dist = point_distance(x, y, adjusted_home_x, adjusted_home_y);
-			if (_dist <= speed) {
-				speed = 0;
-				x = adjusted_home_x;
-				y = adjusted_home_y;
-				state = states.ready;
+							// Check if there is NO collision at the next position
+							if collision_circle(next_x, next_y, 50, id, false, true) {
+								move_towards_point(global.current_player.x, global.current_player.y, walkspeed);
+							}
+						}
+					}
+					else {
+						player_get_to_position()
+					}
+				}
 			}
-		    break;
+		
+		}
+		else {
+			// Am I the closest player to the ball on my team?
+			if _closest_to_ball == id {
+				// Move towards ball
+				move_towards_point(obj_ball.x, obj_ball.y, walkspeed);
+			}
+			else {
+				player_get_to_position()
+			}	
+		}
 	}
+	// While Tackling
+	else{
+		if place_meeting(x, y, obj_ball) {
+			if obj_ball.in_possession {
+				with global.current_player {
+					can_tackle = false;
+					alarm[3] = 60;
+			
+				}
+			}
+			global.current_player = id;
+		}
+	
+		if speed > 0 {speed -= 0.5;}
+		if speed == 0 {
+			if can_tackle == false {
+				if alarm[2] < 0 {
+					alarm[2] = 15;
+				}
+			}
+		}
+	}
+	
 	
 	// Animation code
 	if not sliding {image_angle = 0}

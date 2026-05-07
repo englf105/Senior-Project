@@ -113,7 +113,14 @@ if can_move {
 // While Tackling
 else{
 	if place_meeting(x, y, obj_ball) {
-		global.current_player = id
+		if obj_ball.in_possession {
+			with global.current_player {
+				can_tackle = false;
+				alarm[3] = 60;
+			
+			}
+		}
+		global.current_player = id;
 	}
 	
 	if speed > 0 {speed -= 0.5;}
