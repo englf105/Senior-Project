@@ -10,10 +10,11 @@ CM1_info = [room_width/2 - (180 * side), room_height/2 + 100, 155, 800]
 CM2_info = [room_width/2 - (180 * side), room_height/2 - 100, 155, 800]
 CAM_info = [room_width/2 - (130 * side), room_height/2, 175, 825]
 CDM_info = [room_width/2 - (230 * side), room_height/2, 125, 775]
-CB1_info = [room_width/2 - (280 * side), room_height/2 + 100, 71, room_width]
-CB2_info = [room_width/2 - (280 * side), room_height/2 - 100, 71, room_width]
+CB1_info = [room_width/2 - (280 * side), room_height/2 + 100, 71, room_width/2]
+CB2_info = [room_width/2 - (280 * side), room_height/2 - 100, 71, room_width/2]
 FB1_info = [room_width/2 - (250 * side), room_height/2 + 240, 100, 600]
 FB2_info = [room_width/2 -  (250 * side), room_height/2 - 240, 100, 600]
+GK_info = [room_width/2 -  (416 * side), room_height/2, 100, 600]
 
 // Team Composition
 positions = [ST_info, CAM_info, RW_info, LW_info, CM1_info, CM2_info, CB1_info, CB2_info, FB1_info, FB2_info]

@@ -10,6 +10,9 @@ if room == rm_field {
 		// Create the arrow for the second closest player
 		var arrow_second = instance_create_layer(room_width/2, room_height/2, "Instances", obj_player_arrow)
 		arrow_second.arrow = 1
+		
+		// Create the goalkeeper
+		instance_create_layer(GK_info[0], GK_info[1], "Instances", obj_goalkeeper)
 	
 		// Spawn in the players on the team
 		for (var i = 0; i < 10; i += 1) {
@@ -39,6 +42,9 @@ if room == rm_field {
 	}
 	
 	if obj_game.team2 == id {
+	
+		// Create the goalkeeper
+		instance_create_layer(GK_info[0], GK_info[1], "Instances", obj_goalkeeper)
 	
 		// Spawn in the players on the team
 		for (var i = 0; i < 10; i += 1) {
