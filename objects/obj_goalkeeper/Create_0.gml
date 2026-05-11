@@ -7,6 +7,7 @@ diving = false
 can_dive = false
 
 // Player stats
+side = ""
 team = ""
 position = ""
 position_home_x = x

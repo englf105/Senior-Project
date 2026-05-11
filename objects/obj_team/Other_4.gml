@@ -12,7 +12,8 @@ if room == rm_field {
 		arrow_second.arrow = 1
 		
 		// Create the goalkeeper
-		instance_create_layer(GK_info[0], GK_info[1], "Instances", obj_goalkeeper)
+		var goalie = instance_create_layer(GK_info[0], GK_info[1], "Instances", obj_goalkeeper)
+		goalie.side = side;
 	
 		// Spawn in the players on the team
 		for (var i = 0; i < 10; i += 1) {
@@ -44,8 +45,9 @@ if room == rm_field {
 	if obj_game.team2 == id {
 	
 		// Create the goalkeeper
-		instance_create_layer(GK_info[0], GK_info[1], "Instances", obj_goalkeeper)
-	
+		var goalie = instance_create_layer(GK_info[0], GK_info[1], "Instances", obj_goalkeeper)
+		goalie.side = side;
+ 	
 		// Spawn in the players on the team
 		for (var i = 0; i < 10; i += 1) {
 			var player = instance_create_layer(positions[i][0], positions[i][1], "Instances", obj_enemy)

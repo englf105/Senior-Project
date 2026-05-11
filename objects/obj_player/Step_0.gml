@@ -13,6 +13,7 @@ if global.current_user == id {
 	// Movement inputs
 	var _hsp = _right - _left;
 	var _vsp = _down - _up;
+
 	
 	if can_move {
 		
