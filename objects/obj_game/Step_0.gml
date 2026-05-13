@@ -1,6 +1,5 @@
 
-
-if room = rm_field {
+if room = rm_field and game_start {
 	// Timer
 	if alarm[0] < 0 {alarm[0] = 60;}
 	if second < 10 {second_0 = "0";}

@@ -58,6 +58,7 @@
     {"id":{"name":"player_tackle","path":"scripts/player_tackle/player_tackle.yy",},},
     {"id":{"name":"sha_jersey","path":"shaders/sha_jersey/sha_jersey.yy",},},
     {"id":{"name":"spr_ball","path":"sprites/spr_ball/spr_ball.yy",},},
+    {"id":{"name":"spr_coin","path":"sprites/spr_coin/spr_coin.yy",},},
     {"id":{"name":"spr_enemy_idle","path":"sprites/spr_enemy_idle/spr_enemy_idle.yy",},},
     {"id":{"name":"spr_enemy_kicking","path":"sprites/spr_enemy_kicking/spr_enemy_kicking.yy",},},
     {"id":{"name":"spr_enemy_running","path":"sprites/spr_enemy_running/spr_enemy_running.yy",},},

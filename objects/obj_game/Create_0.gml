@@ -14,6 +14,7 @@ global.rScore = 0;
 global.lScore = 0;
 global.time = 0;
 game_stop = false;
+game_start = false;
 minute = 6;
 second_0 = "0";
 second = 0;

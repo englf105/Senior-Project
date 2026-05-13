@@ -1,7 +1,7 @@
 // Sprite settings
 depth = 3
 kick_cooldown = 0
-can_move = true
+can_move = false
 kicking = false
 diving = false
 can_dive = false
