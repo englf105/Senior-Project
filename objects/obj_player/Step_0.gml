@@ -3,12 +3,12 @@ depth = y * -1
 
 // If this player is the current player
 if global.current_user == id {
-	var _up = keyboard_check(ord("W"));
-	var _down = keyboard_check(ord("S"));
-	var _left = keyboard_check(ord("A"));
-	var _right = keyboard_check(ord("D"));
-	var _click = mouse_check_button_released(1);
-	var _tackle = keyboard_check_pressed(vk_space);
+	var _up = obj_keybind.up;
+	var _down = obj_keybind.down;
+	var _left = obj_keybind.left;
+	var _right = obj_keybind.right;
+	var _click = obj_keybind.kick;
+	var _tackle = obj_keybind.tackle;
 
 	// Movement inputs
 	var _hsp = _right - _left;

@@ -1,6 +1,6 @@
 {
   "$GMFont":"",
-  "%Name":"Font1",
+  "%Name":"SportsFont",
   "AntiAlias":1,
   "applyKerning":0,
   "ascender":14,
@@ -9,7 +9,7 @@
   "canGenerateBitmap":true,
   "charset":0,
   "first":0,
-  "fontName":"Arial",
+  "fontName":"Born2bSporty FS",
   "glyphOperations":0,
   "glyphs":{
     "32":{"character":32,"h":18,"offset":0,"shift":4,"w":4,"x":2,"y":2,},
@@ -189,7 +189,7 @@
   "last":0,
   "lineHeight":18,
   "maintainGms1Font":false,
-  "name":"Font1",
+  "name":"SportsFont",
   "parent":{
     "name":"Fonts",
     "path":"folders/Fonts.yy",
