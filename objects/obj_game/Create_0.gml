@@ -3,6 +3,7 @@ window_set_cursor(cr_none);
 cursor_sprite = spr_player_crosshair;
 
 // Game info
+global.game_font = font_add("Born2bSportyFS.otf", 12, false, false, 32, 128);
 global.current_player = 0;
 global.current_user = 0;
 global.ball_scored = false;

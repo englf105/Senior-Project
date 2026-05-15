@@ -9,8 +9,8 @@
   "name":"obj_goalkeeper",
   "overriddenProperties":[],
   "parent":{
-    "name":"field",
-    "path":"folders/Objects/field.yy",
+    "name":"goalkeeper",
+    "path":"folders/Objects/field/goalkeeper.yy",
   },
   "parentObjectId":null,
   "persistent":false,

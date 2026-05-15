@@ -12,8 +12,8 @@
   "name":"obj_enemy",
   "overriddenProperties":[],
   "parent":{
-    "name":"field",
-    "path":"folders/Objects/field.yy",
+    "name":"enemy",
+    "path":"folders/Objects/field/enemy.yy",
   },
   "parentObjectId":null,
   "persistent":false,

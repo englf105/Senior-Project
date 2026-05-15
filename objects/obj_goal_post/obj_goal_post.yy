@@ -6,8 +6,8 @@
   "name":"obj_goal_post",
   "overriddenProperties":[],
   "parent":{
-    "name":"field",
-    "path":"folders/Objects/field.yy",
+    "name":"goal",
+    "path":"folders/Objects/field/goal.yy",
   },
   "parentObjectId":null,
   "persistent":false,
