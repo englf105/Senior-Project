@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"ball",
-    "path":"folders/Objects/ball.yy",
+    "path":"folders/Objects/field/ball.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -10,8 +10,8 @@
   "name":"obj_goal",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"field",
+    "path":"folders/Objects/field.yy",
   },
   "parentObjectId":null,
   "persistent":false,

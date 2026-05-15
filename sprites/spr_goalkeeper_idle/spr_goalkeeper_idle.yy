@@ -29,7 +29,7 @@
   "origin":4,
   "parent":{
     "name":"spr_goalkeeper",
-    "path":"folders/Sprites/spr_goalkeeper.yy",
+    "path":"folders/Sprites/field/spr_goalkeeper.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
