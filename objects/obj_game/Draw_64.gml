@@ -4,18 +4,18 @@ draw_text(10, view_hport - 50, "Click & Hold - Shoot")
 draw_text(10, view_hport - 30, "Space - Tackle")
 
 // Drawing Scoreboard
-draw_sprite_ext(spr_scoreboard, 0, view_wport/2, 0, 2, 2, 0, c_white, 1)
+draw_sprite_ext(spr_scoreboard, 0, view_wport/4, 0, 2, 2, 0, c_white, 1)
 
 // Setting Up Time
 draw_set_halign(fa_center)
 time = string(minute) + ":" + string(second_0) + string(second)
-draw_text_ext_transformed(view_wport/2, 10, time, 1, 64, 2, 2, 0)
+draw_text_ext_transformed(view_wport/4, 12, time, 1, 64, 2, 2, 0)
 
 // Setting Up Scores
-draw_set_halign(fa_right)
-draw_text_ext_transformed(view_wport/2 - 78, 10, global.rScore, 1, 64, 2, 2, 0)
+draw_set_halign(fa_center)
+draw_text_ext_transformed(view_wport/4 - 90, 12, global.rScore, 1, 64, 2, 2, 0)
+draw_text_ext_transformed(view_wport/4 + 90, 12, global.lScore, 1, 64, 2, 2, 0)
 draw_set_halign(fa_left)
-draw_text_ext_transformed(view_wport/2 + 78, 10, global.lScore, 1, 64, 2, 2, 0)
 
 // debug info
 if not f3_screen and keyboard_check_pressed(vk_f3) {f3_screen = true}
@@ -28,4 +28,5 @@ if f3_screen {
 	draw_text(10, 90 , "Camera_instance: " + string(obj_camera.target))
 	draw_text(10, 110 , "Arrow_instance: " + string(obj_player_arrow.target))
 	draw_text(10, 130 , "Arrow_instance: " + string(global.current_user))
+	draw_text(10, 150 , "Starting_side: " + string(global.current_player))
 }

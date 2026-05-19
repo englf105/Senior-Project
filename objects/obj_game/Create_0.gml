@@ -10,8 +10,10 @@ global.ball_scored = false;
 global.rScore = 0;
 global.lScore = 0;
 global.time = 0;
+randomize()
 
 // Game info
+starting_side = 0
 possession = 0
 game_stop = false;
 game_start = false;

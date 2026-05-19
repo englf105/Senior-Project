@@ -26,10 +26,36 @@ if y + vsp > original_y {
 	image_speed = 0;
 	if coin_side == 1 {
 		image_index = 0;
+		obj_game.starting_side = 1;
+		can_delete = true;
 	}
 	if coin_side == 2 {
 		image_index = 4;
+		obj_game.starting_side = 2;
+		can_delete = true;
+	}
+	if speed == 0 and not can_delete {
+		alarm[0] = 60;
 	}
 }
+
+if can_delete {
+	// Text to tell who won coin toss
+	draw_set_font(global.game_font)
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
+	
+	var _message = ""
+	if coin_side == 1 {_message = "HOME STARTS WITH BALL"}
+	if coin_side == 2 {_message = "AWAY STARTS WITH BALL"}
+	draw_text(x, y + 48, _message)
+	
+	draw_text(x, y + 68, "PRESS SPACE TO START KICKOFF")
+
+}
+
+if keyboard_check_pressed(vk_space) and can_delete {
+	instance_destroy()
+} 
 
 y += vsp; // Move the player

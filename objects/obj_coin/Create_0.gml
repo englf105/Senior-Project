@@ -1,6 +1,7 @@
 flip = false;
 coin = 0;
 coin_side = 0;
+can_delete = false;
 
 // For coin flip
 vsp = 0;             // Vertical speed
