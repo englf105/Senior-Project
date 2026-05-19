@@ -13,7 +13,8 @@ global.time = 0;
 randomize()
 
 // Game info
-starting_side = 0
+starting_side = 0;
+kickoff = false;
 possession = 0
 game_stop = false;
 game_start = false;
@@ -22,7 +23,7 @@ second_0 = "0";
 second = 0;
 team1 = "";
 team2 = "";
-f3_screen = false // Debug settings
+f3_screen = false; // Debug settings
 
 // Teams
 global.team1 = instance_create_layer(room_width/2 - 10, y, "Instances", obj_team);

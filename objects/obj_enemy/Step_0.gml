@@ -111,7 +111,7 @@ if can_move {
 	}
 }
 // While Tackling
-else{
+if sliding {
 	if place_meeting(x, y, obj_ball) {
 		if obj_ball.in_possession {
 			with global.current_player {
@@ -132,7 +132,15 @@ else{
 		}
 	}
 }
-	
+
+// If kickoff
+if global.current_player == id {
+	if not can_move and obj_game.kickoff = true{
+		var _nearest_teammate = instance_nearest(x, y, obj_enemy)
+		bot_kick(_nearest_teammate);
+	}
+}
+
 // Animation code
 if not sliding {image_angle = 0}
 if speed > 0 {sprite_index = spr_enemy_running;}
