@@ -122,7 +122,9 @@ if sliding {
 		}
 		global.current_player = id;
 	}
+}
 	
+if not can_move {
 	if speed > 0 {speed -= 0.5;}
 	if speed == 0 {
 		if can_tackle == false {
@@ -134,10 +136,10 @@ if sliding {
 }
 
 // If kickoff
-if global.current_player == id {
+if global.current_player == id and kickoff_start == false {
 	if not can_move and obj_game.kickoff = true{
-		var _nearest_teammate = instance_nearest(x, y, obj_enemy)
-		bot_kick(_nearest_teammate);
+		kickoff_start = true;
+		alarm[1] = 60;
 	}
 }
 

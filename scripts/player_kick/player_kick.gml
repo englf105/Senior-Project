@@ -13,6 +13,9 @@ function player_kick(_is_kicking){
 				alarm[0] = 15;
 				if obj_game.kickoff == true {
 					obj_game.game_start = true;
+					obj_player.can_move = true;
+					obj_enemy.can_move = true;
+					obj_game.kickoff = false;
 				}
 			}
 		}

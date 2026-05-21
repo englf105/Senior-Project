@@ -6,6 +6,7 @@ can_tackle = true
 sliding = false
 kicking = false
 can_possess = true
+kickoff_start = false;
 
 // Player stats
 team = ""

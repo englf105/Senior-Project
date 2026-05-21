@@ -1,3 +1,6 @@
+if global.rScore != 0 or global.lScore != 0 {
+	instance_destroy()
+}
 flip = false;
 coin = 0;
 coin_side = 0;

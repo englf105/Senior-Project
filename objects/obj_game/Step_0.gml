@@ -21,11 +21,6 @@ if starting_side != 0 and not instance_exists(obj_coin) and not kickoff {
 
 }
 
-if game_start == true {
-	obj_player.can_move = true;
-	obj_enemy.can_move = true;
-}
-
 if room = rm_field and game_start {
 	// Timer
 	if alarm[0] < 0 {alarm[0] = 60;}

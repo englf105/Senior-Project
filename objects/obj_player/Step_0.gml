@@ -18,8 +18,10 @@ if global.current_user == id {
 	if can_move {
 		
 		// Movement
-		hspeed = walkspeed * _hsp;
-		vspeed = walkspeed * _vsp;
+		if obj_game.kickoff == false {
+			hspeed = walkspeed * _hsp;
+			vspeed = walkspeed * _vsp;
+		}
 
 		//Player animations
 		if _up or _down or _left or _right {sprite_index = spr_player_running;}
@@ -76,14 +78,6 @@ if global.current_user != id {
 	var _closest_teammate = instance_nearest(x, y, obj_player);
 	var _closest_enemy = instance_nearest(x, y, obj_enemy);
 	var _closest_to_ball = instance_nearest(obj_ball.x, obj_ball.y, obj_player);
-
-	// Animation code
-	if not sliding {image_angle = 0}
-	if speed > 0 {sprite_index = spr_player_running;}
-	else {sprite_index = spr_player_idle;}
-	if hspeed > 0 {image_xscale = 1;}
-	if hspeed < 0 {image_xscale = -1;}
-	if sliding {sprite_index = spr_player_tackle;}
 	
 	if can_move {
 		// Is the ball in possession?
@@ -155,7 +149,7 @@ if global.current_user != id {
 		}
 	}
 	// While Tackling
-	else{
+	if sliding {
 		if place_meeting(x, y, obj_ball) {
 			if obj_ball.in_possession {
 				with global.current_player {
@@ -166,7 +160,9 @@ if global.current_user != id {
 			}
 			global.current_player = id;
 		}
+	}
 	
+	if not can_move {
 		if speed > 0 {speed -= 0.5;}
 		if speed == 0 {
 			if can_tackle == false {
@@ -176,4 +172,12 @@ if global.current_user != id {
 			}
 		}
 	}
+	
+	// Animation code
+	if not sliding {image_angle = 0}
+	if speed > 0 {sprite_index = spr_player_running;}
+	else {sprite_index = spr_player_idle;}
+	if hspeed > 0 {image_xscale = 1;}
+	if hspeed < 0 {image_xscale = -1;}
+	if sliding {sprite_index = spr_player_tackle;}
 }

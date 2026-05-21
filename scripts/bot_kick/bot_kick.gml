@@ -10,6 +10,12 @@ function bot_kick(_inst){
 				speed = 10;
 				can_possess = false;
 				alarm[0] = 60;
+				if obj_game.kickoff == true {
+					obj_game.game_start = true;
+					obj_player.can_move = true;
+					obj_enemy.can_move = true;
+					obj_game.kickoff = false;
+				}
 			}
 		}
 		can_move = false;
