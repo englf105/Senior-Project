@@ -1,24 +1,23 @@
-
-if starting_side != 0 and not instance_exists(obj_coin) and not kickoff {
-	if starting_side == 1 {
-		var _kickoff_player = 0;
-		with obj_ball {
-			_kickoff_player = instance_nearest(x, y, obj_player);
+if kickoff {
+	if starting_side != 0 and not instance_exists(obj_coin){
+		if starting_side == 1 {
+			var _kickoff_player = 0;
+			with obj_ball {
+				_kickoff_player = instance_nearest(x, y, obj_player);
+			}
+			_kickoff_player.x = room_width/2 - 9;
+			global.current_player = _kickoff_player;
 		}
-		_kickoff_player.x = room_width/2 - 9;
-		global.current_player =_kickoff_player;
-		kickoff = true;
-	}
-	if starting_side == 2 {
-		var _kickoff_enemy = 0;
-		with obj_ball {
-			_kickoff_enemy = instance_nearest(x, y, obj_enemy);
+		if starting_side == 2 {
+			var _kickoff_enemy = 0;
+			with obj_ball {
+				_kickoff_enemy = instance_nearest(x, y, obj_enemy);
+			}
+			_kickoff_enemy.x = room_width/2 + 10;
+			global.current_player = _kickoff_enemy;
 		}
-		_kickoff_enemy.x = room_width/2 + 10;
-		global.current_player =_kickoff_enemy;
-		kickoff = true;
-	}
 
+	}
 }
 
 if room = rm_field and game_start {

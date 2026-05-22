@@ -149,4 +149,12 @@ if speed > 0 {sprite_index = spr_enemy_running;}
 else {sprite_index = spr_enemy_idle;}
 if hspeed > 0 {image_xscale = 1;}
 if hspeed < 0 {image_xscale = -1;}
-if sliding {sprite_index = spr_enemy_tackle;}
+if sliding {
+		sprite_index = spr_enemy_tackle;
+		if hspeed > 0 {
+			image_index = 0;
+		}
+		if hspeed < 0 {
+			image_index = 1;
+		}
+	}

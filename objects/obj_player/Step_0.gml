@@ -19,6 +19,7 @@ if global.current_user == id {
 		
 		// Movement
 		if obj_game.kickoff == false {
+			
 			hspeed = walkspeed * _hsp;
 			vspeed = walkspeed * _vsp;
 		}
@@ -36,6 +37,7 @@ if global.current_user == id {
 		
 		// Tackling
 		if _tackle {
+			image_xscale = 1;
 			var _direction = point_direction(x, y, mouse_x, mouse_y);
 			player_tackle(_direction);
 		}
@@ -179,5 +181,13 @@ if global.current_user != id {
 	else {sprite_index = spr_player_idle;}
 	if hspeed > 0 {image_xscale = 1;}
 	if hspeed < 0 {image_xscale = -1;}
-	if sliding {sprite_index = spr_player_tackle;}
+	if sliding {
+		sprite_index = spr_player_tackle;
+		if hspeed > 0 {
+			image_index = 0;
+		}
+		if hspeed < 0 {
+			image_index = 1;
+		}
+	}
 }

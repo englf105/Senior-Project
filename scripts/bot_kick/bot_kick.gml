@@ -13,6 +13,7 @@ function bot_kick(_inst){
 				if obj_game.kickoff == true {
 					obj_game.game_start = true;
 					obj_player.can_move = true;
+					obj_goalkeeper.can_move = true;
 					obj_enemy.can_move = true;
 					obj_game.kickoff = false;
 				}

@@ -56,6 +56,7 @@ if can_delete {
 
 if keyboard_check_pressed(vk_space) and can_delete {
 	instance_destroy()
+	obj_game.kickoff = true;
 } 
 
 y += vsp; // Move the player
