@@ -1,3 +1,4 @@
+
 if (room == rm_field) {
 	
 	// Create instances that need to be created

@@ -72,6 +72,7 @@
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"id":{"name":"rm_settings","path":"rooms/rm_settings/rm_settings.yy",},},
     {"id":{"name":"bot_kick","path":"scripts/bot_kick/bot_kick.yy",},},
+    {"id":{"name":"game_variable_reset","path":"scripts/game_variable_reset/game_variable_reset.yy",},},
     {"id":{"name":"player_get_to_position","path":"scripts/player_get_to_position/player_get_to_position.yy",},},
     {"id":{"name":"player_kick","path":"scripts/player_kick/player_kick.yy",},},
     {"id":{"name":"player_tackle","path":"scripts/player_tackle/player_tackle.yy",},},

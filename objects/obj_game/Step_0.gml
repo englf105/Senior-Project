@@ -1,3 +1,6 @@
+
+
+
 if kickoff {
 	if starting_side != 0 and not instance_exists(obj_coin){
 		if starting_side == 1 {
@@ -37,4 +40,27 @@ if room = rm_field and game_start {
 		game_stop = true;
 	}
 
+}
+
+if game_stop == true {
+	game_start = false;
+	message_box = true;
+	if global.rScore > global.lScore {message_box_text = "YOU WIN";}
+	else if global.rScore < global.lScore {message_box_text = "YOU LOSE";}
+	else {message_box_text = "TIE";}
+	obj_player.can_move = false;
+	obj_player.sprite_index = spr_player_idle
+	obj_enemy.can_move = false;
+	obj_enemy.sprite_index = spr_enemy_idle
+	obj_goalkeeper.can_move = false;
+	obj_goalkeeper.sprite_index = spr_goalkeeper_idle
+	if alarm[1] < 0 {
+		alarm[1] = 60;
+	}
+	
+	if keyboard_check_pressed(vk_space) and move_on {
+		room_restart()
+		room_goto(rm_menu);
+		game_variable_reset()
+	}
 }

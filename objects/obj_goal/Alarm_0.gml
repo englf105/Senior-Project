@@ -3,3 +3,5 @@ room_restart()
 global.ball_scored = false
 obj_game.kickoff = true;
 obj_game.game_start = false;
+obj_game.message_box = false;
+obj_game.message_box_text = "";

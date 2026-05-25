@@ -19,11 +19,14 @@ possession = 0
 game_stop = false;
 game_start = false;
 minute = 3;
-second_0 = "0";
+second_0 = "";
 second = 0;
 team1 = "";
 team2 = "";
 f3_screen = false; // Debug settings
+message_box = false;
+message_box_text = "";
+move_on = false;
 
 // Teams
 global.team1 = instance_create_layer(room_width/2 - 10, y, "Instances", obj_team);

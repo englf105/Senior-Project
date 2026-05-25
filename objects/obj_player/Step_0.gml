@@ -65,7 +65,7 @@ if global.current_user == id {
 		}
 	}
 	
-	if global.ball_scored == true or obj_game.game_stop == true{
+	if global.ball_scored == true{
 		can_move = false
 		sprite_index = spr_player_idle
 	}

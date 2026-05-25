@@ -55,7 +55,6 @@ if in_possession {
 	else if global.current_player.sliding {
 		x = global.current_player.x;
 		y = global.current_player.y;
-		var offset = global.current_player.direction;
 		
 	
 	}

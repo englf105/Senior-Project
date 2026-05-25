@@ -126,6 +126,7 @@ if sliding {
 	
 if not can_move {
 	if speed > 0 {speed -= 0.5;}
+	if speed < 0 {speed = 0;}
 	if speed == 0 {
 		if can_tackle == false {
 			if alarm[2] < 0 {

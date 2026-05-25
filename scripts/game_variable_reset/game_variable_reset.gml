@@ -1,0 +1,25 @@
+function game_variable_reset(){
+	// Game info
+	global.game_font = font_add("Born2bSportyFS.otf", 12, false, false, 32, 128);
+	global.current_player = 0;
+	global.current_user = 0;
+	global.ball_scored = false;
+	global.rScore = 0;
+	global.lScore = 0;
+	global.time = 0;
+	randomize()
+
+	// Game info
+	starting_side = 0;
+	kickoff = false;
+	possession = 0
+	game_stop = false;
+	game_start = false;
+	minute = 0;
+	second_0 = "0";
+	second = 15;
+	f3_screen = false; // Debug settings
+	message_box = false;
+	message_box_text = "";
+	move_on = false;
+	}
