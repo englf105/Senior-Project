@@ -1,4 +1,4 @@
-if global.rScore != 0 or global.lScore != 0 {
+if obj_game.rScore != 0 or obj_game.lScore != 0 {
 	instance_destroy()
 }
 flip = false;

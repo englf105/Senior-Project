@@ -2,7 +2,7 @@
 if place_meeting(x, y, obj_ball) {
 	if global.ball_scored == false {
 		if goal_side == "left"  {
-			global.lScore += 1
+			obj_game.lScore += 1
 			global.ball_scored = true
 			obj_game.starting_side = 1
 			obj_game.message_box = true;
@@ -10,7 +10,7 @@ if place_meeting(x, y, obj_ball) {
 			alarm[0] = 60;
 		}
 		if goal_side == "right" {
-			global.rScore += 1
+			obj_game.rScore += 1
 			global.ball_scored = true
 			obj_game.starting_side = 2
 			obj_game.message_box = true;

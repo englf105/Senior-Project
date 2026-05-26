@@ -14,8 +14,8 @@ if room == rm_field {
 
 	// Setting Up Scores
 	draw_set_halign(fa_center)
-	draw_text_ext_transformed(view_wport/4 - 90, 12, global.rScore, 1, 64, 2, 2, 0);
-	draw_text_ext_transformed(view_wport/4 + 90, 12, global.lScore, 1, 64, 2, 2, 0);
+	draw_text_ext_transformed(view_wport/4 - 90, 12, obj_game.rScore, 1, 64, 2, 2, 0);
+	draw_text_ext_transformed(view_wport/4 + 90, 12, obj_game.lScore, 1, 64, 2, 2, 0);
 	draw_set_halign(fa_left);
 
 	// Game box display

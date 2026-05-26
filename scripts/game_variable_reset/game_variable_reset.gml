@@ -4,9 +4,9 @@ function game_variable_reset(){
 	global.current_player = 0;
 	global.current_user = 0;
 	global.ball_scored = false;
-	global.rScore = 0;
-	global.lScore = 0;
-	global.time = 0;
+	obj_game.rScore = 0;
+	obj_game.lScore = 0;
+	obj_game.time = 0;
 	randomize()
 
 	// Game info

@@ -26,6 +26,7 @@ if kickoff {
 if room = rm_field and game_start {
 	// Timer
 	if alarm[0] < 0 {alarm[0] = 60;}
+	
 	if second < 10 {second_0 = "0";}
 	else {second_0 = ""}
 	if second == 60 {
@@ -45,8 +46,8 @@ if room = rm_field and game_start {
 if game_stop == true {
 	game_start = false;
 	message_box = true;
-	if global.rScore > global.lScore {message_box_text = "YOU WIN";}
-	else if global.rScore < global.lScore {message_box_text = "YOU LOSE";}
+	if rScore > lScore {message_box_text = "YOU WIN";}
+	else if rScore < lScore {message_box_text = "YOU LOSE";}
 	else {message_box_text = "TIE";}
 	obj_player.can_move = false;
 	obj_player.sprite_index = spr_player_idle
