@@ -1,6 +1,8 @@
 // Check if the instance exists
 if (instance_exists(target)) {
 	
+	target = global.current_user;
+	
 	// Smoothly move the camera's x position towards the target's x position
 	var _cam_x = camera_get_view_x(view_camera[0]);
 	var _target_x = target.x - camera_get_view_width(view_camera[0]) / 2;
