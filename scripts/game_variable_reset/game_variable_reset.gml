@@ -15,11 +15,12 @@ function game_variable_reset(){
 	possession = 0
 	game_stop = false;
 	game_start = false;
-	minute = 0;
+	minute = 3;
 	second_0 = "0";
-	second = 15;
+	second = 0;
 	f3_screen = false; // Debug settings
 	message_box = false;
 	message_box_text = "";
 	move_on = false;
+	alarm[1] = -1;
 	}

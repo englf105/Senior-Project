@@ -55,6 +55,7 @@ if game_stop == true {
 	obj_enemy.sprite_index = spr_enemy_idle
 	obj_goalkeeper.can_move = false;
 	obj_goalkeeper.sprite_index = spr_goalkeeper_idle
+	
 	if alarm[1] < 0 {
 		alarm[1] = 60;
 	}
@@ -62,6 +63,6 @@ if game_stop == true {
 	if keyboard_check_pressed(vk_space) and move_on {
 		room_restart()
 		room_goto(rm_menu);
-		game_variable_reset()
+		game_variable_reset();
 	}
 }
