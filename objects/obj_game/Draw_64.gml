@@ -1,8 +1,9 @@
 if room == rm_field {
 	// Draw instruction text
-	draw_text(10, view_hport - 70, "WASD - Move");
-	draw_text(10, view_hport - 50, "Click & Hold - Shoot");
-	draw_text(10, view_hport - 30, "Space - Tackle");
+	draw_set_halign(fa_left);
+	draw_text(10, view_hport/2 - 60, "WASD - Move");
+	draw_text(10, view_hport/2 - 40, "Click & Hold - Shoot");
+	draw_text(10, view_hport/2 - 20, "Space - Tackle");
 
 	// Drawing Scoreboard
 	draw_sprite_ext(spr_scoreboard, 0, view_wport/4, 0, 2, 2, 0, c_white, 1)
