@@ -6,17 +6,17 @@ if room == rm_field {
 	draw_text(10, view_hport/2 - 20, "Space - Tackle");
 
 	// Drawing Scoreboard
-	draw_sprite_ext(spr_scoreboard, 0, view_wport/4, 0, 2, 2, 0, c_white, 1)
+	draw_sprite_ext(spr_scoreboard, 0, view_wport/3, 0, 2, 2, 0, c_white, 1)
 
 	// Setting Up Time
 	draw_set_halign(fa_center);
 	time = string(minute) + ":" + string(second_0) + string(second);
-	draw_text_ext_transformed(view_wport/4, 12, time, 1, 64, 2, 2, 0);
+	draw_text_ext_transformed(view_wport/3, 12, time, 1, 64, 2, 2, 0);
 
 	// Setting Up Scores
 	draw_set_halign(fa_center)
-	draw_text_ext_transformed(view_wport/4 - 90, 12, obj_game.rScore, 1, 64, 2, 2, 0);
-	draw_text_ext_transformed(view_wport/4 + 90, 12, obj_game.lScore, 1, 64, 2, 2, 0);
+	draw_text_ext_transformed(view_wport/3 - 90, 12, obj_game.rScore, 1, 64, 2, 2, 0);
+	draw_text_ext_transformed(view_wport/3 + 90, 12, obj_game.lScore, 1, 64, 2, 2, 0);
 	draw_set_halign(fa_left);
 
 	// Game box display

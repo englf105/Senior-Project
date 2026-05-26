@@ -1,3 +1,7 @@
+x = view_wport/3;
+y = view_hport/4;
+
+
 if obj_game.rScore != 0 or obj_game.lScore != 0 {
 	instance_destroy()
 }
