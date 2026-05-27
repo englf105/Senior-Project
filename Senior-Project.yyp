@@ -43,6 +43,7 @@
   "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"Born2bSportyFS.otf","CopyToMask":-1,"filePath":"datafiles","name":"Born2bSportyFS.otf","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"gameplay.mp4","CopyToMask":-1,"filePath":"datafiles","name":"gameplay.mp4","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
   "LibraryEmitters":[],
