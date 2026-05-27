@@ -12,7 +12,7 @@ function player_kick(_is_kicking){
 				speed = global.current_player.kick_power;
 				alarm[0] = 15;
 				flash = 3;
-				audio_play_sound(snd_kick, 10, false)
+				audio_play_sound(snd_kick, 10, false, 1, 0, random_range(0.8, 1.2))
 				repeat (5) {
 					instance_create_layer(x, y, "Instances", obj_particle)
 				}

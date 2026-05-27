@@ -53,6 +53,7 @@ if diving {
 }
 
 if place_meeting(x, y, obj_ball) {
+	audio_play_sound(snd_kick, 10, false, 1, 0, random_range(0.8, 1.2))
 	with obj_ball {
 		direction = random_range(315, 45);
 		speed = 10;

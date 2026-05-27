@@ -10,6 +10,7 @@ if not flip {
 }
 
 if keyboard_check_pressed(vk_space) and not flip {
+	audio_play_sound(snd_flip, 10, false)
 	flip = true;
 	vsp = jump_speed
 	coin_side = choose(1, 2)
@@ -24,6 +25,9 @@ if y + vsp > original_y {
 	// When the coin stops moving
     vsp = 0;
 	image_speed = 0;
+	if obj_game.starting_side == 0 {
+		audio_play_sound(snd_coin, 10, false)
+	}
 	if coin_side == 1 {
 		image_index = 0;
 		obj_game.starting_side = 1;

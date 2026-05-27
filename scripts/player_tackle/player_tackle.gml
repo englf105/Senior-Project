@@ -5,6 +5,7 @@ function player_tackle(_direction){
 	
 	// Tackling
 	if can_tackle and not _on_my_team  {
+		audio_play_sound(snd_slide, 10, false, 1, 0, random_range(0.8, 1.2))
 		direction = _direction
 		image_angle = direction;
 		speed = 8;

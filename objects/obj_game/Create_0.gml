@@ -26,6 +26,7 @@ f3_screen = false; // Debug settings
 message_box = false;
 message_box_text = "";
 move_on = false;
+whistle = false;
 
 // Teams
 global.team1 = instance_create_layer(room_width/2 - 10, y, "Instances", obj_team);

@@ -1,6 +1,8 @@
 // If the ball is in the goal
 if place_meeting(x, y, obj_ball) {
 	if global.ball_scored == false {
+		audio_play_sound(snd_cheer, 10, false)
+		
 		if goal_side == "left"  {
 			obj_game.lScore += 1
 			global.ball_scored = true

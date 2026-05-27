@@ -10,6 +10,10 @@ if kickoff {
 			}
 			_kickoff_player.x = room_width/2 - 9;
 			global.current_player = _kickoff_player;
+			if not whistle {
+				whistle = true;
+				audio_play_sound(snd_whistle, 10, false);
+			}
 		}
 		if starting_side == 2 {
 			var _kickoff_enemy = 0;
@@ -18,6 +22,10 @@ if kickoff {
 			}
 			_kickoff_enemy.x = room_width/2 + 10;
 			global.current_player = _kickoff_enemy;
+			if not whistle {
+				whistle = true;
+				audio_play_sound(snd_whistle, 10, false);
+			}
 		}
 
 	}
