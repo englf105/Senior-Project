@@ -6,4 +6,4 @@ if _num > 0 {
 	_closest_teammate = _list[| 0];
 }
 
-bot_kick(_closest_teammate);
+bot_kick_decision(_closest_teammate);

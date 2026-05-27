@@ -19,7 +19,6 @@ if global.current_user == id {
 		
 		// Movement
 		if obj_game.kickoff == false {
-			
 			hspeed = walkspeed * _hsp;
 			vspeed = walkspeed * _vsp;
 		}
@@ -50,7 +49,6 @@ if global.current_user == id {
 				with global.current_player {
 					can_tackle = false;
 					alarm[3] = 60;
-			
 				}
 			}
 			global.current_player = id;

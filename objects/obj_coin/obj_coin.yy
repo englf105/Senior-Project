@@ -10,8 +10,8 @@
   "name":"obj_coin",
   "overriddenProperties":[],
   "parent":{
-    "name":"player",
-    "path":"folders/Objects/field/player.yy",
+    "name":"field",
+    "path":"folders/Objects/field.yy",
   },
   "parentObjectId":null,
   "persistent":false,

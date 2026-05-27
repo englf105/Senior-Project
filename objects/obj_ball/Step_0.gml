@@ -38,9 +38,8 @@ if can_possess {
 	}
 	if place_meeting(x, y, obj_enemy) {
 		with (instance_nearest(x, y, obj_enemy)) {
-			if can_possess {
-				global.current_player = id
-			}
+			global.current_player = id
+
 		}
 		can_possess = false
 		in_possession = true

@@ -32,7 +32,7 @@ if can_move {
 					
 						if teammate_open != noone {
 							// Pass the ball to them
-							bot_kick(_closest_teammate);
+							bot_kick_decision(_closest_teammate);
 						}
 						else {
 							// Am I on the right side of the field?
@@ -42,7 +42,7 @@ if can_move {
 							}
 							else {
 								// pass the ball to the closest player to me
-								bot_kick(_closest_teammate);
+								bot_kick_decision(_closest_teammate);
 							}
 						}
 					}
@@ -51,7 +51,8 @@ if can_move {
 					// Am I in range of the goal?
 					if point_distance(x, y, other_goal.x, other_goal.y) <= 100 {
 						// shoot the ball at the goal
-						bot_kick(other_goal);
+						speed = 0;
+						bot_kick_decision(other_goal);
 					}
 					else {
 						// move towards the goal
@@ -133,6 +134,7 @@ if global.current_player == id and kickoff_start == false {
 // Animation code
 if not sliding {image_angle = 0}
 if speed > 0 {sprite_index = spr_enemy_running;}
+else if sprite_index == spr_enemy_kicking {}
 else {sprite_index = spr_enemy_idle;}
 if hspeed > 0 {image_xscale = 1;}
 if hspeed < 0 {image_xscale = -1;}
