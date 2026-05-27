@@ -9,8 +9,8 @@
   "name":"obj_shadow",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"player",
+    "path":"folders/Objects/field/player.yy",
   },
   "parentObjectId":null,
   "persistent":false,

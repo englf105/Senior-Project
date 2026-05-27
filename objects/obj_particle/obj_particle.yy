@@ -9,8 +9,8 @@
   "name":"obj_particle",
   "overriddenProperties":[],
   "parent":{
-    "name":"field",
-    "path":"folders/Objects/field.yy",
+    "name":"player",
+    "path":"folders/Objects/field/player.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"field",
-    "path":"folders/Sprites/field.yy",
+    "name":"spr_goal",
+    "path":"folders/Sprites/field/spr_goal.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

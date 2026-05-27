@@ -11,7 +11,7 @@ function bot_kick(_inst){
 	if _distance_to_inst <= 50 {
 		_ball_speed = 7.5
 	}
-	if _distance_to_inst <= 100 {
+	else {
 		_ball_speed = 10
 	}
 		
@@ -29,6 +29,10 @@ function bot_kick(_inst){
 		speed = _ball_speed;
 		can_possess = false;
 		alarm[0] = 15;
+		audio_play_sound(snd_kick, 10, false)
+		repeat (5) {
+			instance_create_layer(x, y, "Instances", obj_particle)
+		}
 	}
 	can_move = false;
 	can_possess = false;
