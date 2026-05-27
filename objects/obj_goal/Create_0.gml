@@ -10,12 +10,13 @@ else {
 	global.goal2 = id
 }
 if goal_side == "left" {
+	var _post_detail = instance_create_layer(x, y, "Instances", obj_goal_detail);
 	var _post = instance_create_layer(x, y, "Instances", obj_goal_post);
 }
 if goal_side == "right" {
 	image_xscale = -1
+	var _post_detail = instance_create_layer(x, y, "Instances", obj_goal_detail);
 	var _post = instance_create_layer(x, y, "Instances", obj_goal_post);
-	with _post {
-		image_xscale = -1
-	}
+	with _post_detail {image_xscale = -1}
+	with _post {image_xscale = -1}
 }

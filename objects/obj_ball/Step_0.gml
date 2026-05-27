@@ -6,6 +6,10 @@ if ((x <= 0) || (x >= room_width)) {hspeed = -hspeed;} // Horizontal collision
 if ((y <= 0) || (y >= room_height)) {vspeed = -vspeed;} // Vertical collision
 
 // Bounce off objects
+
+if (place_meeting(x, y, obj_goal_post)) {hspeed = -hspeed;} // Horizontal collision
+if (place_meeting(x, y, obj_goal_post)) {vspeed = -vspeed;} // Vertical collision
+
 if (place_meeting(x, y, obj_goalkeeper)) {hspeed = -hspeed;} // Horizontal collision
 if (place_meeting(x, y, obj_goalkeeper)) {vspeed = -vspeed;} // Vertical collision
 
