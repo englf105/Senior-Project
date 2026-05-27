@@ -12,6 +12,9 @@ function player_kick(_is_kicking){
 				speed = global.current_player.kick_power;
 				alarm[0] = 15;
 				flash = 3;
+				repeat (5) {
+					instance_create_layer(x, y, "Instances", obj_particle)
+				}
 				if obj_game.kickoff == true {
 					obj_game.game_start = true;
 					obj_goalkeeper.can_move = true;

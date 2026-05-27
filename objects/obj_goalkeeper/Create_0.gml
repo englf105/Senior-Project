@@ -14,3 +14,6 @@ new_y = y;
 minimum_x = 0;
 maximum_x = 0;
 walkspeed = 2;
+
+var my_shadow = instance_create_layer(x, y + 12, "Instances", obj_shadow);
+my_shadow.parent = id;
