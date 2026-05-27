@@ -11,6 +11,7 @@ function player_kick(_is_kicking){
 				direction = point_direction(x, y, mouse_x, mouse_y);
 				speed = global.current_player.kick_power;
 				alarm[0] = 15;
+				flash = 3;
 				if obj_game.kickoff == true {
 					obj_game.game_start = true;
 					obj_goalkeeper.can_move = true;

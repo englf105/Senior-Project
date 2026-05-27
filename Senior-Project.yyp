@@ -77,6 +77,7 @@
     {"id":{"name":"player_get_to_position","path":"scripts/player_get_to_position/player_get_to_position.yy",},},
     {"id":{"name":"player_kick","path":"scripts/player_kick/player_kick.yy",},},
     {"id":{"name":"player_tackle","path":"scripts/player_tackle/player_tackle.yy",},},
+    {"id":{"name":"sh_white","path":"shaders/sh_white/sh_white.yy",},},
     {"id":{"name":"spr_back_button","path":"sprites/spr_back_button/spr_back_button.yy",},},
     {"id":{"name":"spr_background_image","path":"sprites/spr_background_image/spr_background_image.yy",},},
     {"id":{"name":"spr_ball","path":"sprites/spr_ball/spr_ball.yy",},},

@@ -6,13 +6,13 @@ function bot_kick(_inst){
 	var _ball_speed = 0
 		
 	if _distance_to_inst <= 20 {
-		_ball_speed = 3
-	}
-	if _distance_to_inst <= 50 {
 		_ball_speed = 5
 	}
+	if _distance_to_inst <= 50 {
+		_ball_speed = 7.5
+	}
 	if _distance_to_inst <= 100 {
-		_ball_speed = 8
+		_ball_speed = 10
 	}
 		
 	if obj_game.kickoff == true {
@@ -24,13 +24,11 @@ function bot_kick(_inst){
 	}
 		
 	with obj_ball {
-		if in_possession {
-			in_possession = false;
-			direction = point_direction(x, y, _inst.x, _inst.y);
-			speed = _ball_speed;
-			can_possess = false;
-			alarm[0] = 60;
-		}
+		in_possession = false;
+		direction = point_direction(x, y, _inst.x, _inst.y);
+		speed = _ball_speed;
+		can_possess = false;
+		alarm[0] = 15;
 	}
 	can_move = false;
 	can_possess = false;

@@ -85,9 +85,7 @@ if global.current_user == id {
 
 // Ai scripts
 if global.current_user != id {
-	
-	var _closest_teammate = instance_nearest(x, y, obj_player);
-	var _closest_enemy = instance_nearest(x, y, obj_enemy);
+
 	var _closest_to_ball = instance_nearest(obj_ball.x, obj_ball.y, obj_player);
 	
 	if can_move {
@@ -98,7 +96,6 @@ if global.current_user != id {
 				// Do I have the ball?
 				if global.current_player == id {
 					global.current_user = id;
-					obj_camera.target = id
 				}
 				else {
 					player_get_to_position()
@@ -119,31 +116,7 @@ if global.current_user != id {
 					}
 				}
 				else {
-				
-					// Is there a teammate closer to them?
-					var _my_dist = point_distance(x, y, _closest_enemy.x, _closest_enemy.y)
-					var _teammate_dist = point_distance(_closest_teammate.x, _closest_teammate.y, _closest_enemy.x, _closest_enemy.y)
-				
-					if _my_dist < _teammate_dist {
-						// Move inbetween the guy to mark and the current player
-						var _in_range = collision_circle(_closest_enemy.x, _closest_enemy.y, 50, id, false, true)
-						if not _in_range {
-							move_towards_point_ext(_closest_enemy.x, _closest_enemy.y, walkspeed);
-						}
-						else {
-							// check to see if the player will move out of range
-							var next_x = _closest_enemy.x + hspeed;
-							var next_y = _closest_enemy.y + vspeed;
-
-							// Check if there is NO collision at the next position
-							if collision_circle(next_x, next_y, 50, id, false, true) {
-								move_towards_point_ext(global.current_player.x, global.current_player.y, walkspeed);
-							}
-						}
-					}
-					else {
-						player_get_to_position()
-					}
+					player_get_to_position()
 				}
 			}
 		
@@ -175,6 +148,7 @@ if global.current_user != id {
 	
 	if not can_move {
 		if speed > 0 {speed -= 0.5;}
+		if speed < 0 {speed = 0;}
 		if speed == 0 {
 			if can_tackle == false {
 				if alarm[2] < 0 {
