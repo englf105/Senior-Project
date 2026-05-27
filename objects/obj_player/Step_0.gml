@@ -115,7 +115,7 @@ if global.current_user != id {
 					}
 					else {
 						// Move towards the player
-						move_towards_point(global.current_player.x, global.current_player.y, walkspeed);
+						move_towards_point_ext(global.current_player.x, global.current_player.y, walkspeed);
 					}
 				}
 				else {
@@ -128,7 +128,7 @@ if global.current_user != id {
 						// Move inbetween the guy to mark and the current player
 						var _in_range = collision_circle(_closest_enemy.x, _closest_enemy.y, 50, id, false, true)
 						if not _in_range {
-							move_towards_point(_closest_enemy.x, _closest_enemy.y, walkspeed);
+							move_towards_point_ext(_closest_enemy.x, _closest_enemy.y, walkspeed);
 						}
 						else {
 							// check to see if the player will move out of range
@@ -137,7 +137,7 @@ if global.current_user != id {
 
 							// Check if there is NO collision at the next position
 							if collision_circle(next_x, next_y, 50, id, false, true) {
-								move_towards_point(global.current_player.x, global.current_player.y, walkspeed);
+								move_towards_point_ext(global.current_player.x, global.current_player.y, walkspeed);
 							}
 						}
 					}
@@ -152,7 +152,7 @@ if global.current_user != id {
 			// Am I the closest player to the ball on my team?
 			if _closest_to_ball == id {
 				// Move towards ball
-				move_towards_point(obj_ball.x, obj_ball.y, walkspeed);
+				move_towards_point_ext(obj_ball.x, obj_ball.y, walkspeed);
 			}
 			else {
 				player_get_to_position()

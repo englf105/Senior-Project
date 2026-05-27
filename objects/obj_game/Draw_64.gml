@@ -1,5 +1,6 @@
 if room == rm_field {
 	// Draw instruction text
+	draw_set_colour(c_white)
 	draw_set_halign(fa_left);
 	draw_text(10, view_hport/2 - 60, "WASD - Move");
 	draw_text(10, view_hport/2 - 40, "Click & Hold - Shoot");
@@ -27,13 +28,13 @@ if room == rm_field {
 		draw_set_colour(c_white);
 		draw_set_alpha(1);
 		draw_set_halign(fa_center)
-		draw_text_ext_transformed(view_wport/4, view_hport/4 - 28, message_box_text, 1, 64, 3, 3, 0);
+		draw_text_ext_transformed(view_wport/3, view_hport/4 - 28, message_box_text, 1, 64, 3, 3, 0);
 		draw_set_halign(fa_left);
 	}
 
 	if move_on == true {
 		draw_set_halign(fa_center)
-		draw_text_ext_transformed(view_wport/4, view_hport/4 + 100, "PRESS SPACE TO GO TO MENU", 1, 200, 2, 2, 0);
+		draw_text_ext_transformed(view_wport/3, view_hport/4 + 100, "PRESS SPACE TO GO TO MENU", 1, 200, 2, 2, 0);
 		draw_set_halign(fa_left);
 	}
 
