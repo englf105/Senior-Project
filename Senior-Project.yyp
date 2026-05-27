@@ -42,6 +42,7 @@
   ],
   "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":"2026-05-27 01-42-36.mp4","CopyToMask":-1,"filePath":"datafiles","name":"2026-05-27 01-42-36.mp4","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"Born2bSportyFS.otf","CopyToMask":-1,"filePath":"datafiles","name":"Born2bSportyFS.otf","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
@@ -52,6 +53,7 @@
   "name":"Senior-Project",
   "resources":[
     {"id":{"name":"SportsFont","path":"fonts/SportsFont/SportsFont.yy",},},
+    {"id":{"name":"obj_background_video","path":"objects/obj_background_video/obj_background_video.yy",},},
     {"id":{"name":"obj_ball_arrow","path":"objects/obj_ball_arrow/obj_ball_arrow.yy",},},
     {"id":{"name":"obj_ball","path":"objects/obj_ball/obj_ball.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
